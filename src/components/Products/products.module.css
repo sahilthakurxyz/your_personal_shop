@@ -1,0 +1,228 @@
+.products-main-container{
+    margin-top: 6rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.product-details-container{
+    display: flex;
+}
+.products-left-conatainer {
+    width: 20vw;
+    height: 100vh;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+    padding: 2px 1vmax;
+}
+.heading-filter{
+
+    font: 400 1.4vmax "Roboto";
+}
+.filter-container{
+    width: 70%;
+    margin-left: 2vmax;
+}
+.slider-main{
+    font-size: 1px;
+}
+.category-container{
+    font-size: 15px;
+    font-weight: 500;
+   font-family: 'Merriweather Sans', sans-serif;
+   color: rgba(0,0,0,0.61);
+   margin: 0.4vmax;
+   transition: all 0.5s;
+}
+.category-link{
+    list-style: none;
+    margin-left: 2.3vmax;
+}
+.category-link:hover{
+    color: red;
+}
+.products-center-container {
+    
+    flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.result-heading{
+   margin: 1.6rem 0rem 1.3rem 2rem;
+   font-size: 25px;
+   font-family: 'Merriweather Sans', sans-serif;
+   font-weight: 300;
+}
+
+.products-details-search-result{
+    
+    width: 93%;
+    flex-flow: 1;
+    margin: 1vmax auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    margin: 5vmax;
+}
+.pagination-container > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.page_item{
+  list-style: none;
+cursor: pointer;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1vmax 1.5vmax;
+   transition: 0.3s all;
+   
+}
+.page_item:first-child{
+    border-radius: 5px 0 0 5px;
+}
+.page_item:last-child{
+    border-radius: 0 5px 5px 0;
+}
+.page_item:hover{
+    background-color: rgb(230, 230, 230);
+}
+.page_link{
+    color: gray;
+}
+.page_item:hover .page_link{
+    color: #100b30;
+}
+.page_link{
+ text-decoration: none;
+ transition: 0.3s all;
+ font-family: 'Roboto', sans-serif;
+}
+
+.pageItemActive{
+    background-color: #05090f;
+   
+}
+.pageLinkActive{
+    color: #fff;
+}
+
+
+@media screen and (max-width:600px) {
+    .products-main-container{
+        margin-top: 6rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .product-details-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .products-left-conatainer {
+        width: 100%;
+        height: 40vh;
+ 
+        box-sizing: border-box; 
+        padding: 2rem 1.5rem;
+        padding: 2px 1vmax;
+    }
+   .heading-filter{
+    font: 400 1.7vmax "Roboto";
+    color: gray;
+    margin-left: 1vmax;
+   }
+   .filter-container{
+    margin-left: 2vmax;
+
+   }
+   .filter-container > p{
+    font: 400 1.5vmax "Rubik";
+   }
+   .slider{
+  
+    width: 40%;
+   }
+   .category-link{
+    font: 400 1.4vmax "Roboto";
+   }
+   .fieldset .rating-above{
+    /* margin-left: 1vmax; */
+    font: 400 1.2vmax "Rubik";
+   }
+    .products-center-container {
+        margin-top: -6rem;
+    }
+    .result-heading{
+       font-size: 17px;
+       font-family: 'Merriweather Sans', sans-serif;
+       font-weight: 300;
+    }
+    .no-products{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font: 500 2vmax "Roboto";
+    }
+    .products-details-search-result{
+        
+        width: 93%;
+        flex-flow: 1;
+        margin: 1vmax auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .pagination-container{
+        display: flex;
+        justify-content: center;
+        margin: 5vmax;
+    }
+    .pagination-container > ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    .page_item{
+      list-style: none;
+    cursor: pointer;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1vmax 1.5vmax;
+       transition: 0.3s all;
+       
+    }
+    .page_item:first-child{
+        border-radius: 5px 0 0 5px;
+    }
+    .page_item:last-child{
+        border-radius: 0 5px 5px 0;
+    }
+    .page_item:hover{
+        background-color: rgb(230, 230, 230);
+    }
+    .page_link{
+        color: gray;
+    }
+    .page_item:hover .page_link{
+        color: #100b30;
+    }
+    .page_link{
+     text-decoration: none;
+     transition: 0.3s all;
+     font-family: 'Roboto', sans-serif;
+    }
+    
+    .pageItemActive{
+        background-color: #05090f;
+       
+    }
+    .pageLinkActive{
+        color: #fff;
+    }
+     
+}

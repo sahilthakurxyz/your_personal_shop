@@ -1,0 +1,109 @@
+.profile-container{
+    margin-top: 7rem;
+    display: flex;
+    width: 100%;
+   padding: 1vmax;
+   box-sizing: border-box;
+}
+.profile-container-left{
+    flex: 30%;
+ 
+   padding: 1vmax;
+   box-sizing: border-box;
+}
+.profile-user-info{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 3vmax;
+   
+   
+}
+.left-heading{
+    font-size: 23px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+.left-user-image{
+    height: 31vh;
+    width: 15vw;
+    margin-left: 6vmax;
+   
+   
+   border-radius: 50%;
+   transition: all 0.5s;
+}
+.left-user-image:hover{
+    transform: scale(1.1);
+}
+ .left-user-info-button{
+    margin-top: 3vmax;
+    margin-left: 9vmax;
+    width: 30%;
+   padding: 8px;
+   border-radius: 5px;
+  border: none;
+   color: #fff;
+   font-weight: 400;
+   font-family: 'Rubik', sans-serif;
+   background-color: red;
+   transition: all 0.5s;
+}
+ .left-user-info-button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: tomato;
+}
+.profile-user-info .left-user-info-button:focus{
+    outline: none;
+}
+.profile-container-right{
+    flex: 70%;
+
+    padding: 2vmax;
+    box-sizing: border-box;
+}
+.profile-user-details{
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.profile-user-details > div{
+    margin-top: 1vmax;
+}
+.profile-user-details > div > h4{
+   font-size: 18px;
+   font-weight: 500; 
+   font-family: 'Roboto Serif', serif;
+}
+.profile-user-details > div > p{
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+.profiles-buttons{
+    display: flex;
+    flex-direction: column;
+    
+}
+.user-profile-button {
+    margin-top: 2vmax;
+    padding: 7px;
+    border-radius: 3px;
+    width: 50%;
+    background-color: #405166;
+    border: none;
+}
+.user-profile-button:hover{
+    background-color: #506168;
+}
+.user-profile-button:focus{
+    outline: none;
+}
+.green{
+    color: green;
+}
+.black{
+    color: black;
+}

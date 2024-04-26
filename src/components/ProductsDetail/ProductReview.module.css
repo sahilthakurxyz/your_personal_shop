@@ -1,0 +1,36 @@
+.product-reviews{
+    display: flex;
+    justify-content: center; 
+     padding: 10px;
+     box-shadow: 1px 1px 7px 0px #faf5f5;
+     margin-top: 1rem;
+     width: 15vw;
+   }
+   .reviews-user_info{
+   position: relative;
+   
+   }
+   .review-user-image-container{
+       display: flex;
+       justify-content: center;
+       width: 5vw;
+       height: 10vh;
+       border-radius: 50%;
+       overflow: hidden;
+   }
+   .review-user-image-container > img{
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+   }
+   .user-name{
+     margin-top: 5px;
+     font-family: 'Roboto', sans-serif;
+     font-size: 13px;
+     font-weight: 600;
+   }
+   .comments{
+       font-family: 'Roboto', sans-serif;
+     font-size: 10px;
+     font-weight: 400;
+   }

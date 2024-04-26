@@ -1,0 +1,284 @@
+.signup-container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup-box{
+    width: 35vw;
+    height: 70vh;
+    background-color: #fff;
+    box-shadow: 2px 1px 10px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.sigup-heading{
+    height: 11vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    display: grid;
+    place-items: center;
+}
+.signup-form{
+    position: relative;
+    top: -1.5vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    padding: 2vmax;
+    height: 70%;
+    transition: all 0.5s;
+}
+
+.signup-form > div{
+display: flex;
+align-items: center;
+width: 100%;
+}
+.signup-form > div > input{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.267);
+  font-size: 0.9vmax;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 400;
+}
+.signup-form > div > input:focus{
+    outline: none;
+  }
+  .signup-form > div >  svg{
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.4vmax;
+    color: rgba(0, 0, 0, 0.267);
+}
+.signup-password-eye{
+    position: absolute;
+    right: 4vmax;
+    z-index: 2;
+    margin-top: 3px;
+    cursor: pointer;
+}
+.signup-password-eye > svg{
+    font-size: 25px;
+    color: gray;
+
+}
+.signup-form > a{
+   position: relative;
+   top: 2vmax;
+    color:gray ;
+    display: flex;
+    align-self: flex-end;
+    text-decoration: none;
+    transition: all 0.5s;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1vmax;
+    font-weight: 500;
+}
+.signup-form > a > span{
+    color: #111;
+
+}
+.signup-form > a:hover{
+    color: black;
+    cursor: pointer;
+}
+.submit-btn-signup{
+    width: 80%;
+    border: none;
+    height: 3vmax;
+    padding: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.5s;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1vmax;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.219);
+    background-color: red;
+}
+.submit-btn-signup:hover{
+    width: 100%;
+    transform: scale(1);
+    background-color: tomato;
+}
+.submit-btn-signup:focus{
+    outline: none;
+}
+#registerImage > img{
+   
+    width: 3vmax;
+    height: 3vmax;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+#registerImage > input{
+    display: flex;
+    padding: 0;
+} 
+#registerImage > input::file-selector-button{
+    cursor: pointer;
+    width:100% ;
+    height: 5vh;
+    border: none;
+    margin: 0%;
+    font-size: 0.8vmax;
+    font-weight: 400;
+    font-family: 'Merriweather Sans', sans-serif;
+    transition: all 0.5s;
+    padding: 0 1vmax;
+    color: rgba(0, 0, 0, 0.623);
+  background-color: rgb(255, 255, 255);
+}
+#registerImage > input::file-selector-button:hover{
+    background-color: rgba(235, 235, 235, 235);
+}
+
+@media screen and (max-width:600px) {
+    .signup-container{
+        height: 100%;
+        width: 100%;
+    
+        position: fixed;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .signup-box{
+        width: 100%;
+       height: 100%;
+       
+        
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .sigup-heading{
+        position: relative;
+        top: 2vmax;
+        height: 7vh;
+        font-family: 'Rubik', sans-serif;
+        font-size: 23px;
+        font-weight: 500;
+        display: grid;
+        place-items: center;
+       
+    }
+    .signup-form{
+        position: relative;
+        top: -1vmax;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: auto;
+        padding: 3vmax;
+        height: 70%;
+        transition: all 0.5s;
+    }
+        .signup-form > div > input{
+            padding: 2.5vmax 4vmax;
+            padding-right: 1vmax;
+            width: 100%;
+          box-sizing: border-box;
+          border-radius: 5px;
+          border: none;
+          box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.267);
+          font-size: 1.8vmax;
+          font-family: 'Rubik', sans-serif;
+          font-weight: 400;
+        }
+          .signup-form > div >  svg{
+            position: absolute;
+            transform: translateX(1vmax);
+            font-size: 2.4vmax;
+            color: rgba(0, 0, 0, 0.267);
+        }
+        .signup-password-eye{
+            position: absolute;
+            right: 5.3vmax;
+            z-index: 2;
+            margin-top: 4px;
+        }
+        .signup-form > a{
+           position: relative;
+           top: 2vmax;
+            color:gray ;
+            display: flex;
+            align-self: flex-end;
+            text-decoration: none;
+            transition: all 0.5s;
+            font-family: 'Merriweather Sans', sans-serif;
+            font-size: 2vmax;
+            font-weight: 500;
+        }
+        .signup-form > a > span{
+            color: #111;
+            font-size: 1.8vmax;
+        }
+        .submit-btn-signup{
+            width: 80%;
+            border: none;
+            height: 5vmax;
+            padding: 5px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+            color: #fff;
+            border-radius: 5px;
+            transition: all 0.5s;
+            font-family: 'Merriweather Sans', sans-serif;
+            font-size: 2vmax;
+            cursor: pointer;
+            font-weight: 400;
+            box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.219);
+            background-color: red;
+        }
+        
+        .submit-btn-signup:focus{
+            outline: none;
+        }
+        #registerImage{
+            position: relative;
+           left: -1vmax;
+        }
+        #registerImage > img{
+           
+            width: 8vmax;
+            height: 8vmax;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+        }
+        #registerImage > input{
+            display: flex;
+            padding: 0;
+        } 
+        #registerImage > input::file-selector-button{
+            cursor: pointer;
+            width:100% ;
+            height: 5vh;
+            border: none;
+            margin: 0%;
+            font-size: 1.3vmax;
+            font-weight: 500;
+            font-family: 'Merriweather Sans', sans-serif;
+            transition: all 0.5s;
+            padding: 0 1vmax;
+            color: rgba(0, 0, 0, 0.623);
+          background-color: rgb(255, 255, 255);
+        }
+      
+}

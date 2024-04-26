@@ -1,0 +1,152 @@
+.homeProducts-main-container{
+    margin: 0;
+    padding: 8px 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.homeProducts-main-container > a{
+    text-decoration: none;
+}
+.homeProducts-main-container .product-container{
+   box-sizing: border-box;
+   padding: 2px 5px;
+   height: auto;
+   width: 18vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-radius: 7px;
+   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   transition: all 0.3s;
+}
+.homeProducts-main-container .product-container:hover{
+    box-shadow: -2px -2px 9px 5px rgba(0, 0, 0, 0.1);
+
+
+}
+.homeProducts-main-container .product-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.homeProducts-main-container .image{
+    background-color: #eee;
+    height: 35vh;
+    width: 18vw;
+    object-fit: contain;
+}
+.homeProducts-main-container .name{
+    font: 400 1vmax "Rubik";
+    color:#78818f;
+}
+.homeProducts-main-container .box-1{
+    margin-top: 0.2vmax;
+    display: flex;
+    justify-content: flex-start;
+}
+.homeProducts-main-container .price{
+    font: 500 1.3vmax "Rubik";
+}
+.homeProducts-main-container .price  svg{
+    font-size: 12px;
+}
+.homeProducts-main-container .reviews{
+    margin-left: 2.3vmax;
+}
+.homeProducts-main-container .reviews > .rev{
+    margin-left: 0.3vmax;
+    font: 400 1vmax "Roboto";
+}
+.homeProducts-main-container .reviews > span > svg{
+    font-size: 12px;
+}
+.homeProducts-main-container .box-2{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1vmax;
+}
+.homeProducts-main-container .discount{
+    font: 400 1.2vmax "Rubik";
+}
+.homeProducts-main-container .ratings-star{
+    margin-left: 2vmax;
+}
+@media screen and (max-width:600px) {
+    .homeProducts-main-container{
+        margin: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-bottom: 2vmax;
+    }
+    .homeProducts-main-container > a{
+        text-decoration: none;
+    }
+    .homeProducts-main-container .product-container{
+       box-sizing: border-box;
+    
+       height: auto;
+       width: 45vw;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       border-radius: 7px;
+       box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+       overflow: hidden;
+    
+    }
+    .homeProducts-main-container .image{
+        background-color: #eee;
+        height: 30vh;
+        width: 100%;
+        object-fit: contain;
+    }
+    .homeProducts-main-container .product-details{
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        padding: 2px;
+    }
+    
+    .homeProducts-main-container .name{
+        font: 400 1.4vmax "Rubik";
+        color:#78818f;
+    }
+    .homeProducts-main-container .box-1{
+        margin-top: 0.4vmax;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .homeProducts-main-container .price{
+        font: 500 1.5vmax "Rubik";
+    }
+    .homeProducts-main-container .price  svg{
+        font-size: 12px;
+    }
+    .homeProducts-main-container .reviews{
+        margin-left: 2.5vmax;
+    }
+    .homeProducts-main-container .reviews > .rev{
+        margin-left: 0.3vmax;
+        font: 400 1.4vmax "Roboto";
+    }
+    .homeProducts-main-container .reviews > span > svg{
+        font-size: 12px;
+    }
+    .homeProducts-main-container .box-2{
+        margin-top: 0.6vmax;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 1vmax;
+    }
+    .homeProducts-main-container .discount{
+        font: 400 1.5vmax "Rubik";
+    }
+    .homeProducts-main-container .ratings-star{
+    
+       margin-left: -0.5vmax;
+
+    }
+}

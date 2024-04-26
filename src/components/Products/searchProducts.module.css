@@ -1,0 +1,192 @@
+.product-details-container{
+    display: flex;
+    margin-top: 1rem;
+    box-sizing: border-box;
+   box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+}
+.product-Image{
+ background-color: #eee;
+display: flex;
+justify-content: center;
+
+}
+.product-Image > .image{
+    width: 20vw;
+    height: 30vh;
+        object-fit: contain;
+}
+.product-details-info{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.brand-name{
+    color: #17191c;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+.description{
+    
+    max-height: 4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    font: 400 1.2vmax "Roboto";
+    color: #0F1111!important;
+    
+    line-height: 24px!important;
+}
+.ratings{
+    margin-top: 10px;
+}
+
+ .product-price{
+    margin-top: 1.3vmax;
+    display: flex;
+    width: 70%;
+    justify-content: flex-start;
+     
+}
+.product-price > div{
+    margin-left: 1vmax;
+    display: flex;
+    justify-content: space-evenly;
+}
+.product-price > div > .mrp{
+  margin-right: 0.5vmax;
+  font: 400 1.2vmax "Roboto";
+}
+.product-price > div .price{
+    margin-left: 0.5vmax;
+    font: 400 1.2vmax "Rubik";
+    color: #17191c;
+    
+}
+.product-price > div  .cut-line{
+    position: relative;
+    left: -6vmax;
+    top: -0.8vmax;
+    width: 6vmax;
+    border-bottom: 1px solid #0F1111;
+}
+.discounted-price{
+    position: relative;
+    left: -5.5vmax;
+}
+.discounted-price > svg{
+    font-size: 14px;
+}
+.discounted-price p{
+    font: 400 1.2vmax "Roboto";
+}
+.discount > p{
+    position: relative;
+    left: -6vmax;
+    font: 400 1.2vmax "Roboto";
+    
+}
+ 
+@media screen and (max-width:600px) {
+    .product-details-container{
+        display: flex;
+        margin-top: 1rem;
+        box-sizing: border-box;
+       box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+    }
+    .product-Image{
+     background-color: #eee;
+    display: flex;
+    justify-content: center;
+    
+    }
+    .product-Image > .image{
+        width: 25vw;
+        height: 30vh;
+            object-fit: contain;
+    }
+    .product-details-info{
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+    }
+    
+    .brand-name{
+        color: #17191c;
+        font-size: 17px;
+        font-weight: 500;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+    .description{
+        
+        max-height: 5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        font: 400 1.6vmax "Roboto";
+        color: #0F1111!important;
+        
+        line-height: 28px!important;
+    }
+    .ratings{
+        margin-top: 10px;
+    }
+    
+     .product-price{
+        margin-top: 1.3vmax;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start;
+         
+    }
+    .product-price > div{
+        margin-left: 1vmax;
+        display: flex;
+        padding:0.7vmax; 
+        justify-content: space-evenly;
+      box-sizing: border-box;
+     
+
+    }
+    .product-price > div > .mrp{
+      margin-right: 0.5vmax;
+      font: 400 1.8vmax "Roboto";
+    }
+    .product-price > div .price{
+        margin-left: 0.5vmax;
+        font: 400 1.8vmax "Rubik";
+        color: #17191c;
+        
+    }
+    .product-price > div  .cut-line{
+        position: relative;
+        left: -9vmax;
+        top: -1vmax;
+        width: 7vmax;
+        border-bottom: 1px solid #0F1111;
+    }
+    .discounted-price{
+        position: relative;
+        left: -5.5vmax;
+    }
+    .discounted-price > svg{
+        font-size: 14px;
+    }
+    .discounted-price p{
+        margin-left: -3rem;
+        font: 400 2.2vmax "Roboto";
+    }
+    .discount > p{
+        position: relative;
+        left: -6vmax;
+        font: 400 2.3vmax "Roboto";
+        
+    }
+     
+}

@@ -1,0 +1,112 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+      z-index: 500;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100%;
+      background-color: #040f13; /* Dark background color */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .loading_text{
+      position: relative;
+      top: 1rem;
+     font-family: 'Roboto', sans-serif;
+  
+    }
+    .spinner {
+      width: 10vw;
+      height: 10vw; 
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: #1d1a85; 
+      border-bottom-color: #0d0b39;
+      animation: rotating 2000ms linear infinite, colorFlip 2000ms linear infinite; 
+    }
+    
+    @keyframes rotating {
+      0%,40%{
+        transform: rotateZ(-160deg);
+  
+      }
+      10%,30%{
+        transform: rotateZ(160deg)
+      }
+      100% {
+        transform: rotateZ(360deg);
+      }
+  
+    }
+    
+    @keyframes colorlip {
+      0%, 25% {
+        border-top-color: #2a25be;
+      }
+      25.1%, 50% {
+        border-top-color: #e74c3c;
+      }
+      50.1%, 75% {
+        border-top-color: #721667;
+      }
+      75.1%, 100% {
+        border-top-color: #3498db;
+      }
+    }
+  
+    .small-button-loader{
+        
+          width: 2.2vmax;
+          height: 2.2vmax;
+          border-radius: 50%;
+          animation: spin 1000ms linear infinite;
+    }
+    @keyframes spin {
+      0%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+    .login-loader{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+    }
+    .login-loader > .login-spinner{
+        width: 10vmax;
+        height: 10vmax;
+        border-radius: 50%;
+        border: 8px solid gray;
+        border-top: 8px solid green;
+        border-left: 8px solid green;
+        border-right: 8px solid green;
+        animation: rotate 1.2s infinite linear;
+    }
+    @keyframes rotate {
+        0%,10%{
+            transform: rotate(0deg);
+        }
+       
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @media screen and (max-width:600px) {
+      .small-button-loader{
+        
+        width: 3vmax;
+        height: 3vmax;
+        border-radius: 50%;
+        animation: spin 1000ms linear infinite;
+  }
+    }
