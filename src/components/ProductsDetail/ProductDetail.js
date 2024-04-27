@@ -176,7 +176,7 @@ const ProductDetail = () => {
                   )}
                 </div>
               </div>
-              <div className={styles.special_deals_container}>
+              <div className={styles["special_deals_container"]}>
                 <div className={styles["special_deal_box"]}>
                   <div>
                     <span>Deal of the Day</span>
@@ -251,83 +251,78 @@ const ProductDetail = () => {
             </div>
           </div>
           <div className={styles.product_details_right}>
-            <div className={styles.product_details_cart_container}>
-              <div className={styles.cart_product_info}>
-                <p className={styles.name}>{name}</p>
-                <p className={styles.product_id}>{id}</p>
-                <div className={styles.price}>
-                  <FaRupeeSign />
-                  {discountedPrice && selectedQuantity
-                    ? (discountedPrice * selectedQuantity).toFixed(2)
-                    : "N/A"}
-                  <span>
-                    <IoPricetagOutline />
-                  </span>
-                </div>
-              </div>
-              <div className={styles.user_address}>
-                <div>
-                  <span>
-                    <FaLocationDot
-                      style={{ color: "#310c70", fontSize: "20px" }}
-                    />
-                  </span>
-                </div>
-                <p className={styles.address}>
-                  delivering the product to you location in 5 days
-                </p>
-              </div>
-              {stock > 0 && (
-                <div className={styles["quantity-dropdown-container"]}>
-                  <label htmlFor="quantity" className={styles.label}>
-                    Select Quantity
-                  </label>
-                  <select
-                    id="quantity"
-                    name="quantity"
-                    value={selectedQuantity}
-                    onChange={handleQuantityChange}
-                    className={styles.dropdown}
-                  >
-                    {quantityOptions.map((quantity) => (
-                      <option
-                        key={quantity}
-                        value={quantity}
-                        className={styles["selected"]}
-                      >
-                        {quantity}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              )}
-              <div className={styles["stock-status"]}>
-                <span>Status: </span>
-                {"  "}
-                {stock > 0 ? (
-                  <p className={styles.inStock}>In Stock</p>
-                ) : (
-                  <p className={styles.outStock}>Out of Stock</p>
-                )}
-              </div>
-              <hr className={styles.lines} />
-              <div className={styles.cart_buttons}>
-                <button
-                  className={styles.add_to_cart}
-                  onClick={handleCartSubmit}
-                >
-                  Add to Cart
-                </button>
-                <button className={styles.buy_now} onClick={handleByNow}>
-                  Buy Now
-                </button>
-              </div>
-              <div className={styles["secure-payment"]}>
+            <div className={styles.cart_product_info}>
+              <p className={styles.name}>{name}</p>
+              <p className={styles.product_id}>{id}</p>
+              <div className={styles.price}>
+                <FaRupeeSign />
+                {discountedPrice && selectedQuantity
+                  ? (discountedPrice * selectedQuantity).toFixed(2)
+                  : "N/A"}
                 <span>
-                  <GrSecure style={{ fontSize: "17px", color: "#04145e" }} />
+                  <IoPricetagOutline />
                 </span>
-                <span>secure payment method</span>
               </div>
+            </div>
+            <div className={styles.user_address}>
+              <div>
+                <span>
+                  <FaLocationDot
+                    style={{ color: "#310c70", fontSize: "20px" }}
+                  />
+                </span>
+              </div>
+              <p className={styles.address}>
+                delivering the product to you location in 5 days
+              </p>
+            </div>
+            {stock > 0 && (
+              <div className={styles["quantity-dropdown-container"]}>
+                <label htmlFor="quantity" className={styles.label}>
+                  Select Quantity
+                </label>
+                <select
+                  id="quantity"
+                  name="quantity"
+                  value={selectedQuantity}
+                  onChange={handleQuantityChange}
+                  className={styles.dropdown}
+                >
+                  {quantityOptions.map((quantity) => (
+                    <option
+                      key={quantity}
+                      value={quantity}
+                      className={styles["selected"]}
+                    >
+                      {quantity}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+            <div className={styles["stock-status"]}>
+              <span>Status: </span>
+              {"  "}
+              {stock > 0 ? (
+                <p className={styles.inStock}>In Stock</p>
+              ) : (
+                <p className={styles.outStock}>Out of Stock</p>
+              )}
+            </div>
+            <hr className={styles.lines} />
+            <div className={styles.cart_buttons}>
+              <button className={styles.add_to_cart} onClick={handleCartSubmit}>
+                Add to Cart
+              </button>
+              <button className={styles.buy_now} onClick={handleByNow}>
+                Buy Now
+              </button>
+            </div>
+            <div className={styles["secure-payment"]}>
+              <span>
+                <GrSecure style={{ fontSize: "17px", color: "#04145e" }} />
+              </span>
+              <span>secure payment method</span>
             </div>
           </div>
         </div>

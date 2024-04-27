@@ -503,6 +503,7 @@
 
     @media screen and (max-width:600px) {
         .product-container{
+            margin-top: -2rem;
             display: flex;
             flex-direction: column;
            
@@ -527,9 +528,12 @@
            
           }
            .carousel-container {
-        width: 60vw;
-        height: 52vh;
-        background-color: red;
+       
+        width: 100%;
+        
+        padding: 5px 1vmax;
+        box-sizing: border-box;
+        background-color: #eee;
         overflow: hidden;
           }
           
@@ -556,17 +560,18 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
           }
           .product-details-center {
+            margin-top: -10rem;
             width: 100%;
-            background-color: green;
-            
+         
           }
           
           .item-details-container {
             position: relative;
-            /* top: 3rem; */
+            top: 1rem;
             background-color: #f8f8f8; /* Updated background color */
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
             border-radius: 10px;
+            box-sizing: border-box;
             padding: 20px;
           }
           
@@ -582,7 +587,7 @@
             color: #333333;
           }
           .title-section-descripton > span {
-            font: 500 1vmax "Rubik";
+            font: 500 1.4vmax "Rubik";
             color: #007185; /* Updated text color */
           }
           
@@ -602,8 +607,8 @@
             color: #6A5ACD;
           }
           .special_deals_container {
-            width: 90%;
-            height: 25vh;
+            width: 100%;
+            height: 16vh;
             margin-bottom: 1rem;
             padding-bottom: 10px;
             border: 1px solid #e0e0e0; /* Updated border color */
@@ -632,7 +637,7 @@
           .price-tag {
             display: inline-block;
             padding: 10px;
-            width: 5vw;
+            width: 15vw;
             font-family: 'Roboto', sans-serif;
             font-size: 12px;
             font-weight: 500;
@@ -700,16 +705,12 @@
            border: none;
            outline: none;
             cursor: pointer;
-            width: 90%;
+            margin: 1vmax auto;
+            width: 50%;
             transition: all 0.5s;
           
           }
-          .create-review > button:hover{
-            background-color: #6A5ACD;
-            color: #FFFFFF;
-            border-color: #008080;
-            transform: scale(1.1);
-          }
+       
           .reviews-container{
             display: flex;
             flex-direction: column;
@@ -724,16 +725,16 @@
           }
           
           .product_details_right {
-            position: relative;
-            top: 3rem;
-            /* width: 20vw;
-            height: 75vh; */
-            margin-top: 1vmax;
+            
+         width: 100%;
+           padding: 1vmax;
+           box-sizing: border-box;
+            margin-top: -2vmax;
             padding: 8px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); /* 3D effect */
-            background-color: #f4f4f4; /* Attractive background color */
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); 
+           
             border-radius: 10px; /* Rounded corners */
           }
           
