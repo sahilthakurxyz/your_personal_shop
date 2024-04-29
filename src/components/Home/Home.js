@@ -11,6 +11,7 @@ import RatingStar from "../labels/RatingStar.js";
 import Product2 from "./Product2.js";
 import HomeProducts from "./HomeProducts.js";
 import { allProductClearError } from "../../redux/reducers/productReducer.js";
+import { LoginLoader } from "../../basics/Spinner.js";
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -65,102 +66,108 @@ const Home = () => {
   return (
     <Fragment>
       <MetaData title="Discover Amazing Deals at Your Ultimate Shopping Destination" />
-      <div className={styles["home-main-container"]}>
-        <Banner />
-        {/* First Container */}
-        <div className={styles["home-container-1"]}>
-          <div className={styles["today-best-deal"]}>
-            <p>Today's Best Deals</p>
-          </div>
-          <div className={styles["products-container-main"]}>
-            <div className={styles["products-container"]}>
-              <div className={styles["heading"]}>
-                <p>Save Up to 50%</p>
-              </div>
-              {discountProductsArray && discountProductsArray.length >= 4 ? (
-                <div className={styles["products"]}>
-                  {discountProductsArray.slice(0, 4).map((product, index) => (
-                    <Product1 key={index} product={product} />
-                  ))}
-                </div>
-              ) : (
-                <div className={styles["no-products"]}>
-                  <p>No Products Available</p>
-                </div>
-              )}
+      {loading ? (
+        <LoginLoader />
+      ) : (
+        <div className={styles["home-main-container"]}>
+          <Banner />
+          {/* First Container */}
+          <div className={styles["home-container-1"]}>
+            <div className={styles["today-best-deal"]}>
+              <p>Today's Best Deals</p>
             </div>
-            <div className={styles["products-container"]}>
-              <div className={styles["heading"]}>
-                <p>Top Rated</p>
-                <RatingStar {...options} />
-              </div>
-              {highRatingProductsArray &&
-              highRatingProductsArray.length >= 4 ? (
-                <div className={styles["products"]}>
-                  {highRatingProductsArray.slice(0, 4).map((product, index) => (
-                    <Product2 key={index} product={product} />
-                  ))}
+            <div className={styles["products-container-main"]}>
+              <div className={styles["products-container"]}>
+                <div className={styles["heading"]}>
+                  <p>Save Up to 50%</p>
                 </div>
-              ) : (
-                <div className={styles["no-products"]}>
-                  <p>No Products Available</p>
-                </div>
-              )}
-            </div>
-            <div className={styles["products-container"]}>
-              <div className={styles["heading"]}>
-                <p>Up To 20% to 50% off | For Men </p>
-              </div>
-              {filterProductCategory &&
-              Object.keys(filterProductCategory).length >= 4 ? (
-                <div className={styles["products"]}>
-                  {Object.values(filterProductCategory)
-                    .flat()
-                    .slice(0, 4)
-                    .map((product, index) => (
+                {discountProductsArray && discountProductsArray.length >= 4 ? (
+                  <div className={styles["products"]}>
+                    {discountProductsArray.slice(0, 4).map((product, index) => (
                       <Product1 key={index} product={product} />
                     ))}
-                </div>
-              ) : (
-                <div className={styles["no-products"]}>
-                  <p>No Products Available</p>
-                </div>
-              )}
-            </div>
-            <div className={styles["products-container"]}>
-              <div className={styles["heading"]}>
-                <p>Save Up to 50%</p>
+                  </div>
+                ) : (
+                  <div className={styles["no-products"]}>
+                    <p>No Products Available</p>
+                  </div>
+                )}
               </div>
-              {filterLaptopProductsArray &&
-              filterLaptopProductsArray.length >= 4 ? (
-                <div className={styles["products"]}>
-                  {filterLaptopProductsArray
-                    .slice(0, 4)
-                    .map((product, index) => (
-                      <Product1 product={product} key={index} />
-                    ))}
+              <div className={styles["products-container"]}>
+                <div className={styles["heading"]}>
+                  <p>Top Rated</p>
+                  <RatingStar {...options} />
                 </div>
-              ) : (
-                <div className={styles["no-products"]}>
-                  <p>No Products Available</p>
+                {highRatingProductsArray &&
+                highRatingProductsArray.length >= 4 ? (
+                  <div className={styles["products"]}>
+                    {highRatingProductsArray
+                      .slice(0, 4)
+                      .map((product, index) => (
+                        <Product2 key={index} product={product} />
+                      ))}
+                  </div>
+                ) : (
+                  <div className={styles["no-products"]}>
+                    <p>No Products Available</p>
+                  </div>
+                )}
+              </div>
+              <div className={styles["products-container"]}>
+                <div className={styles["heading"]}>
+                  <p>Up To 20% to 50% off | For Men </p>
                 </div>
-              )}
+                {filterProductCategory &&
+                Object.keys(filterProductCategory).length >= 4 ? (
+                  <div className={styles["products"]}>
+                    {Object.values(filterProductCategory)
+                      .flat()
+                      .slice(0, 4)
+                      .map((product, index) => (
+                        <Product1 key={index} product={product} />
+                      ))}
+                  </div>
+                ) : (
+                  <div className={styles["no-products"]}>
+                    <p>No Products Available</p>
+                  </div>
+                )}
+              </div>
+              <div className={styles["products-container"]}>
+                <div className={styles["heading"]}>
+                  <p>Save Up to 50%</p>
+                </div>
+                {filterLaptopProductsArray &&
+                filterLaptopProductsArray.length >= 4 ? (
+                  <div className={styles["products"]}>
+                    {filterLaptopProductsArray
+                      .slice(0, 4)
+                      .map((product, index) => (
+                        <Product1 product={product} key={index} />
+                      ))}
+                  </div>
+                ) : (
+                  <div className={styles["no-products"]}>
+                    <p>No Products Available</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          {/* Second Container */}
+          <div className={styles["home-container-2"]}>
+            <div className={styles["shop-all-products"]}>
+              <p> Shop All Products in One Place</p>
+            </div>
+            <div className={styles["all-products"]}>
+              {products &&
+                products.map((product) => (
+                  <HomeProducts key={product._id} product={product} />
+                ))}
             </div>
           </div>
         </div>
-        {/* Second Container */}
-        <div className={styles["home-container-2"]}>
-          <div className={styles["shop-all-products"]}>
-            <p> Shop All Products in One Place</p>
-          </div>
-          <div className={styles["all-products"]}>
-            {products &&
-              products.map((product) => (
-                <HomeProducts key={product._id} product={product} />
-              ))}
-          </div>
-        </div>
-      </div>
+      )}
     </Fragment>
   );
 };

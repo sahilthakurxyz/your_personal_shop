@@ -67,6 +67,43 @@
     border-radius: 10px;
     padding: 20px;
   }
+  .cart_product_info {
+    width: 100%;
+    color: #ffff;
+    padding-top: 8px;
+    margin-bottom: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart_product_info > .name {
+    color: #007185;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    padding: 6px;
+  }
+  
+  .cart_product_info .product_id {
+    font-family: 'Roboto', sans-serif;
+    color: red;
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+
+  .cart_product_info .price {
+    color: #111;
+    font: 400 1.5vmax "Rubik";
+    margin-left: 1vmax;
+  }
+  .cart_product_info .price > svg{
+   font: 300 12px "Roboto";
+  }
+  .cart_product_info .price > span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #ad3e18;
+  }
   
   .items-details {
     width: 100%;
@@ -181,17 +218,7 @@
           
          
           
-          .special_deal_box  .total-price{
-              display: flex;
-              align-items: center;
-              width: 50%;
-              justify-content: space-between;
-              font: 500 1.2vmax "Rubik";
-              color: #000080;
-              box-sizing: border-box;
-              padding: 5px 1px;
-              background-color: #f0f0f0;
-        }
+        
 
   /* .company-details-container {
     width: 20vw;
@@ -283,48 +310,6 @@
     border-radius: 10px; /* Rounded corners */
   }
   
-  .cart_product_info {
-    width: 100%;
-    color: #ffff;
-    padding-top: 8px;
-    margin-bottom: 1rem;
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .cart_product_info > .name {
-    color: #007185;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
-    padding: 6px;
-  }
-  
-  .cart_product_info .product_id {
-    font-family: 'Roboto', sans-serif;
-    color: red;
-    font-weight: 300;
-    font-size: 0.8rem;
-  }
-  .cart_product_info .brand_name{
-    color: #d12013;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-  }
-  .cart_product_info .price {
-    color: #111;
-    font: 400 1.5vmax "Rubik";
-    margin-left: 1vmax;
-  }
-  .cart_product_info .price > svg{
-   font: 300 12px "Roboto";
-  }
-  .cart_product_info .price > span {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 300;
-    color: #ad3e18;
-  }
   
   .user_address {
     width: 100%;
@@ -378,7 +363,17 @@
       color: #111;
       background-color: #fff;
     }
-    
+    .product_details_right .total-price{
+      display: flex;
+      align-items: center;
+      width: 70%;
+      justify-content: space-between;
+      font: 500 1.2vmax "Rubik";
+      color: #000080;
+      box-sizing: border-box;
+      padding: 5px 1px;
+      background-color: #f0f0f0;
+}
     .stock-status {
       margin-top: 1vmax;
       width: 100%;
@@ -745,18 +740,7 @@
           .product_price_off > .product_price > p{
             font:500 1.7vmax "Rubik" ;
           }
-          .special_deal_box  .total-price{
-              display: flex;
-              align-items: center;
-              width: 50%;
-              justify-content: space-between;
-              font: 500 1.7vmax "Rubik";
-              color: #000080;
-              box-sizing: border-box;
-              padding: 5px 1px;
-              background-color: #f0f0f0;
-        }
-
+          
           .create-review{
             display: flex;
             flex-direction: column;
@@ -864,6 +848,17 @@
               color: #221224;
               box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.1);
             }
+            .product_details_right .total-price{
+              display: flex;
+              align-items: center;
+              width: 40%;
+              justify-content: space-between;
+              font: 500 1.7vmax "Rubik";
+              color: #000080;
+              box-sizing: border-box;
+              padding: 5px 1px;
+              background-color: #f0f0f0;
+        }
 
             .stock-status {
               margin-top: 1vmax;

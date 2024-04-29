@@ -13,7 +13,8 @@ const SearchProducts = ({ product }) => {
     display: "flex",
     alignItems: "center",
   };
-
+  const offDiscount =
+    discount > 20 ? styles["big-discount"] : styles["discount"];
   return (
     <Link style={{ textDecoration: "none" }} to={`/product/${_id}`}>
       <div className={styles["product-details-container"]}>
@@ -34,19 +35,24 @@ const SearchProducts = ({ product }) => {
           </div>
 
           <div className={styles["product-price"]}>
-            <div>
+            <div className={styles["actual-price"]}>
               <p className={styles["mrp"]}>M.R.P</p>
-              <FaRupeeSign style={{ fontSize: "14px" }} />
-              <p className={styles["price"]}>{price.toFixed(2)}</p>
-              <div className={styles["cut-line"]}></div>
+              <div className={styles["price-box"]}>
+                <span>
+                  <FaRupeeSign />
+                </span>
+                <p className={styles["price"]}>{price.toFixed(2)}</p>
+                <div className={styles["cut-line"]}></div>
+              </div>
             </div>
 
+            <div className={offDiscount}>
+              <p>({discount} % discount)</p>
+            </div>
             <div className={styles["discounted-price"]}>
+              <p>Price</p>
               <FaRupeeSign />
               <p>{discountedPrice.toFixed(2)}</p>
-            </div>
-            <div className={styles["discount"]}>
-              <p>({discount} % discount)</p>
             </div>
           </div>
           {/* <div className={styles["total-price"]}>

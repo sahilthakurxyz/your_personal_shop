@@ -44,50 +44,67 @@ justify-content: center;
     margin-top: 10px;
 }
 
- .product-price{
-    margin-top: 1.3vmax;
+.product-price{
+    margin-top: 1.5vmax;
     display: flex;
-    width: 70%;
-    justify-content: flex-start;
-     
+    flex-direction: column;
+    padding: 0.5vmax 1vmax;
+    box-sizing: border-box;
+    color: #0F1111;
+   
 }
-.product-price > div{
-    margin-left: 1vmax;
-    display: flex;
-    justify-content: space-evenly;
+.product-price .actual-price{
+display: flex;
+
+width: 20vw;
+align-items: center;
 }
-.product-price > div > .mrp{
-  margin-right: 0.5vmax;
-  font: 400 1.2vmax "Roboto";
+.product-price .actual-price .mrp{
+font: 400 1vmax "Rubik";
 }
-.product-price > div .price{
-    margin-left: 0.5vmax;
-    font: 400 1.2vmax "Rubik";
-    color: #17191c;
-    
+.product-price .price-box {
+display: flex;
+align-items: center;
+margin-left: 1vmax;
+overflow: hidden;
 }
-.product-price > div  .cut-line{
-    position: relative;
-    left: -6vmax;
-    top: -0.8vmax;
-    width: 6vmax;
-    border-bottom: 1px solid #0F1111;
+.product-price .price-box > span > svg{
+font: 400 0.7vmax "Rubik";
+
 }
-.discounted-price{
-    position: relative;
-    left: -5.5vmax;
+.product-price .price-box > p{
+font: 400 1vmax "Rubik";
+
 }
-.discounted-price > svg{
-    font-size: 14px;
+.product-price .price-box .cut-line{
+position: relative;
+left: -9.3vmax;
+height: 1px;
+width: 10vw;
+background-color: #0F1111;
 }
-.discounted-price p{
-    font: 400 1.2vmax "Roboto";
+.product-price .discount{
+margin-top: 0.7vmax;
+color: #1068e3;
+font: 500 1vmax "Roboto";
 }
-.discount > p{
-    position: relative;
-    left: -6vmax;
-    font: 400 1.2vmax "Roboto";
-    
+.product-price .big-discount{
+    color: #e310dc;
+margin-top: 0.7vmax;
+
+    font: 500 1vmax "Roboto";
+}
+.product-price > .discounted-price{
+margin-top: 1vmax;
+display: flex;
+align-items: center;
+}
+.product-price > .discounted-price > svg{
+font: 400 0.8vmax "Rubik";
+margin-left: 1vmax;
+}
+.product-price > .discounted-price > p{
+font: 400 1vmax "Rubik";
 }
  
 @media screen and (max-width:600px) {
@@ -136,57 +153,65 @@ justify-content: center;
     .ratings{
         margin-top: 10px;
     }
-    
-     .product-price{
-        margin-top: 1.3vmax;
+    .product-price{
+        margin-top: 1.5vmax;
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: flex-start;
-         
-    }
-    .product-price > div{
-        margin-left: 1vmax;
-        display: flex;
-        padding:0.7vmax; 
-        justify-content: space-evenly;
-      box-sizing: border-box;
-     
+       flex-direction:column;
+        padding: 0.5vmax 1vmax;
+        box-sizing: border-box;
+        color: #0F1111;
 
     }
-    .product-price > div > .mrp{
-      margin-right: 0.5vmax;
-      font: 400 1.8vmax "Roboto";
-    }
-    .product-price > div .price{
-        margin-left: 0.5vmax;
-        font: 400 1.8vmax "Rubik";
-        color: #17191c;
-        
-    }
-    .product-price > div  .cut-line{
-        position: relative;
-        left: -9vmax;
-        top: -1vmax;
-        width: 7vmax;
-        border-bottom: 1px solid #0F1111;
-    }
-    .discounted-price{
-        position: relative;
-        left: -5.5vmax;
-    }
-    .discounted-price > svg{
-        font-size: 14px;
-    }
-    .discounted-price p{
-        margin-left: -3rem;
-        font: 400 2.2vmax "Roboto";
-    }
-    .discount > p{
-        position: relative;
-        left: -6vmax;
-        font: 400 2.3vmax "Roboto";
-        
-    }
-     
+  .product-price .actual-price{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .product-price .actual-price .mrp{
+    font: 400 1.4vmax "Rubik";
+  }
+  .product-price .price-box {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5vmax;
+    overflow: hidden;
+    
+  }
+  .product-price .price-box > span > svg{
+    font: 400 1.2vmax "Rubik";
+
+  }
+  .product-price .price-box > p{
+    font: 400 1.7vmax "Rubik";
+
+  }
+  .product-price .price-box .cut-line{
+    position: relative;
+    left: -9vmax;
+    height: 1px;
+    width: 20vw;
+    background-color: #0F1111;
+  }
+  .product-price .discount{
+color: #1068e3;
+    margin-top: 1vmax;
+    font: 500 1.7vmax "Roboto";
+  }
+  .product-price .big-discount{
+    color: #e310dc;
+    margin-top: 1vmax;
+    font: 500 1.7vmax "Roboto";
+}
+  .product-price > .discounted-price{
+    margin-top: 1vmax;
+    display: flex;
+    align-items: center;
+  }
+  .product-price > .discounted-price > svg{
+    font: 400 1.5vmax "Rubik";
+    margin-left: 1vmax;
+  }
+  .product-price > .discounted-price > p{
+    font: 400 1.8vmax "Rubik";
+  }
 }

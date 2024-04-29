@@ -221,21 +221,13 @@ const ProductDetail = () => {
                           ) : (
                             ""
                           )}
-                          <p className={styles["product_price"]}>
+                          <div className={styles["product_price"]}>
                             <FaRupeeSign />
                             <p>
                               {discountedPrice
                                 ? discountedPrice.toFixed(2)
                                 : "N/A"}
                             </p>
-                          </p>
-                        </div>
-                        <div className={styles["total-price"]}>
-                          <p>Your Total</p>
-                          <div>
-                            {discountedPrice && selectedQuantity
-                              ? (discountedPrice * selectedQuantity).toFixed(2)
-                              : "N/A"}
                           </div>
                         </div>
                       </div>
@@ -325,6 +317,14 @@ const ProductDetail = () => {
                     </select>
                   </div>
                 )}
+                <div className={styles["total-price"]}>
+                  <p>Your Total</p>
+                  <div>
+                    {discountedPrice && selectedQuantity
+                      ? (discountedPrice * selectedQuantity).toFixed(2)
+                      : "N/A"}
+                  </div>
+                </div>
                 <div className={styles["stock-status"]}>
                   <span>Status: </span>
                   {"  "}
