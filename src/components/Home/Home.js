@@ -17,6 +17,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const [filterProductCategory, setFilterProductCategory] = useState([]);
+  const [width, setWidth] = useState(window.innerWidth);
   const { loading, products, error } = useSelector((state) => state.products);
   const discountProductsArray = useMemo(
     () =>
@@ -55,9 +56,20 @@ const Home = () => {
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth); // Concise resize handler
+
+    window.addEventListener("resize", handleResize); // Add resize listener
+
+    return () => {
+      // Cleanup function
+      window.removeEventListener("resize", handleResize); // Remove listener on unmount
+    };
+  }, []); // Empty dependency array: runs only once on mount
+
+  const calculateSize = () => (width <= 700 ? 14 : 13); // Improved size calculation
   const options = {
-    rating: 3.5,
-    size: 17,
+    size: calculateSize(), // Dynamic size based on width
     width: 120,
     display: "flex",
     alignItems: "center",
