@@ -46,9 +46,7 @@ align-items: center;
    font-size: 10px;
    margin-top: 0.2vmax;
 }
-.product-rating{
 
-}
 @media screen and (max-width:600px){
   .product1-main-container a{
     text-decoration: none;

@@ -19,12 +19,13 @@
   .product-details-left {
     
     width: 40vw;
-    height: 80vh;
+    height: 70vh;
+ 
   }
    .carousel-container {
   
     width: 80%;
-    height: 50vh;
+    height: 100%;
     overflow: hidden;
     position: relative;
     object-fit: contain;
@@ -532,21 +533,28 @@
           .product-details-left {
             margin-top: -2rem;
             width: 100%;
+            height: 60vh;
            
+           display: flex;
+           justify-content: center;
           }
   .carousel-container {
         width: 95%; 
-        padding: 1vmax 1vmax;
+        height: 46vh;
+      
+        padding: 3vmax 1vmax;
         box-sizing: border-box;
         background-color: #eee;
         overflow: hidden;
  }
           
            .carousel-slide {
+       
+
             width: 100%;
             height: 100%;
             display: flex;
-            align-items: center;
+           
             object-fit: contain;
             justify-content: center;
             transform-style: preserve-3d;
@@ -554,19 +562,20 @@
           }
           
          .carousel-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            width: 60vw;
+            height: 40vh;
+            margin: 0 auto;
+           
             border-radius: 8px; /* Adjust as needed for rounded corners */
             transition: transform 0.5s ease;
           }
           
            .carousel-image.active {
             transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
           }
           .product-details-center {
-            margin-top: -10rem;
+            margin-top: -5rem;
             width: 100%;
          
           }
