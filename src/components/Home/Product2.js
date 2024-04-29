@@ -16,7 +16,7 @@ const Product2 = ({ product }) => {
     };
   }, []); // Empty dependency array: runs only once on mount
 
-  const calculateSize = () => (width <= 700 ? 14 : 11); // Improved size calculation
+  const calculateSize = () => (width <= 700 ? 11 : 11); // Improved size calculation
 
   const { _id, images, name, ratings } = product; // Destructuring for concise formatting
 

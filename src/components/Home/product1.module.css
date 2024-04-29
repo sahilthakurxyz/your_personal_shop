@@ -63,7 +63,7 @@ align-items: center;
     overflow: hidden;
   box-sizing: border-box;
 transition: all 0.3s;
-padding: 5px 1px;
+padding: 5px 2px;
 margin: 0.6vmax 0.2vmax;
 }
 

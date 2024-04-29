@@ -778,7 +778,7 @@
           .product_details_right {
             
          width: 100%;
-          height: 45vh;
+          height: 47vh;
           box-sizing: border-box;
           padding: 1vmax 3px;
            box-sizing: border-box;
@@ -850,28 +850,30 @@
             .product_details_right .total-price{
               display: flex;
               align-items: center;
-              width: 40%;
+              width: 50%;
+              
               justify-content: space-between;
               font: 500 1.7vmax "Rubik";
               color: #000080;
               box-sizing: border-box;
               padding: 5px 1px;
+              margin-left: 4vmax;
               background-color: #f0f0f0;
         }
 
             .stock-status {
-              margin-top: 1vmax;
+              margin: 1vmax 4vmax;
               width: 100%;
              display: flex;
            
             align-items: center;
             }
             .stock-status > span{
-              font:600 1.2vmax "Rubik"; 
+              font:600 1.5vmax "Rubik"; 
             }
             .stock-status > p{
              margin-left: 0.5vmax;
-              font:500 1.2vmax "Rubik";
+              font:500 1.7vmax "Rubik";
             }
             .inStock {
               color: #4caf50;

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import styles from "./productDetail.module.css";
 import ProductReviews from "./ProductReviews.js";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -55,6 +55,7 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const alert = useAlert();
+  const navigate = useNavigate();
   const onSubmitHandler = () => {
     const myForm = new FormData();
     myForm.set("rating", reviewRating);
@@ -96,6 +97,7 @@ const ProductDetail = () => {
 
     dispatch(addItemsCart(id, selectedQuantity));
     alert.success("add Items to cart");
+    navigate("/cart");
   };
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth); // Concise resize handler
@@ -342,7 +344,7 @@ const ProductDetail = () => {
                   >
                     Add to Cart
                   </button>
-                  <button className={styles.buy_now} onClick={handleByNow}>
+                  <button className={styles["buy_now"]} onClick={handleByNow}>
                     Buy Now
                   </button>
                 </div>
