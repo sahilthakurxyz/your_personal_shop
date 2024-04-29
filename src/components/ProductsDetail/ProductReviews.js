@@ -18,10 +18,10 @@ const ProductReviews = ({ review }) => {
     };
   }, []); // Empty dependency array: runs only once on mount
 
-  const calculateSize = () => (width <= 700 ? 14 : 13); // Improved size calculation
+  const calculateSize = () => (width <= 700 ? 10 : 13); // Improved size calculation
   const options = {
     size: calculateSize(), // Dynamic size based on width
-    width: 120,
+    width: 70,
     display: "flex",
     alignItems: "center",
   };
