@@ -4,6 +4,7 @@ import axios from "axios";
 
 // export const BACKEND_URL = "http://localhost:4001";
 // export const BACKEND_URL_PROD = "http://localhost:4001";
+// export const BACKEND_URL_PROD = "https://production-project-ktl7.onrender.com";
 export const BACKEND_URL_PROD = "https://mernstackecommerce.onrender.com/";
 
 export const axiosInstance = axios.create({

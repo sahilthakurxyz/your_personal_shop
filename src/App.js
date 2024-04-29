@@ -14,7 +14,7 @@ import ProtectedRoute from "./components/route/ProtectedRoute";
 import Dashboard from "./components/Admin/Dashboard";
 
 function App() {
-  const { user, isAuthenticated, loading } = useSelector((state) => state.user);
+  const { user, isAuthenticated } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadUser());

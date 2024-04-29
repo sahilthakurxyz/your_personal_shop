@@ -6,14 +6,11 @@ import { getImages } from "../../redux/actions/imagesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { getImageClearError } from "../../redux/reducers/imagesReducer";
-import { LoginLoader } from "../../basics/Spinner";
 
 const Banner = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { error, backImages, loading } = useSelector(
-    (state) => state.backgroundImages
-  );
+  const { error, backImages } = useSelector((state) => state.backgroundImages);
   const images = useMemo(
     () => (backImages.length > 0 ? backImages[0].images : []),
     [backImages]
@@ -47,26 +44,21 @@ const Banner = () => {
   };
   return (
     <div className={styles["homeHeader"]}>
-      {loading ? (
-        <LoginLoader />
-      ) : (
-        backImages &&
-        images.length > 0 && (
-          <div
-            className={styles.image}
-            style={{
-              backgroundImage: `url(${images && images[currImageIndex].url})`,
-            }}
-          >
-            <div className={styles["left"]} onClick={handlePrevImage}>
-              <FaAngleLeft />
-            </div>
-            <div className={styles["center"]}> </div>
-            <div className={styles["right"]} onClick={handleNextImage}>
-              <FaAngleRight />
-            </div>
+      {backImages && images.length > 0 && (
+        <div
+          className={styles.image}
+          style={{
+            backgroundImage: `url(${images && images[currImageIndex].url})`,
+          }}
+        >
+          <div className={styles["left"]} onClick={handlePrevImage}>
+            <FaAngleLeft />
           </div>
-        )
+          <div className={styles["center"]}> </div>
+          <div className={styles["right"]} onClick={handleNextImage}>
+            <FaAngleRight />
+          </div>
+        </div>
       )}
     </div>
   );

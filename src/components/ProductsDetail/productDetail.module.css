@@ -87,39 +87,36 @@
   
   
   .product_rating {
-    font-size: 1rem;
-    color: #555; /* Updated text color */
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: space-between;
+    display: flex; 
   }
   .product_rating > p{
-    position: relative;
-    left: -8rem;
-    top: 0.2rem;
+   margin-left: 2vmax;
     font: 400 1vmax "Rubik"; 
     color: #6A5ACD;
   }
   .special_deals_container {
-    width: 90%;
-    height: 25vh;
+    width: 100%;
     margin-bottom: 1rem;
-    padding-bottom: 10px;
+   padding: 1vmax 0.5vmax;
     border: 1px solid #e0e0e0; /* Updated border color */
     box-shadow: 0px -1px 3px 0px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+  box-sizing: border-box;
   }
-  
+
   .special_deal_box {
     display: flex;
-    position: relative;
-    top: 1rem;
-    left: 1rem;
+  
     flex-direction: column;
   }
-  
-  .special_deal_box > div > span {
-    width: 20vw;
+  .special_deal{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+  }
+  .special_deal > span{
+    padding: 3px 4px;
     background-color: #ff5252;
     border-radius: 7px;
     padding: 5px;
@@ -127,62 +124,75 @@
     font-size: 0.9rem;
     font-family: 'Roboto', sans-serif;
   }
+ 
   
-  .price-tag {
+  .special_deal .price-tag {
     display: inline-block;
-    padding: 10px;
-    width: 5vw;
+    padding: 5px 1px;
+   
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
+  
     font-weight: 500;
     background-color: #f0f0f0;
-    position: relative;
-    margin-top: 1rem;
+
     border-radius: 5px;
   }
-  
+ .original-price{
+  display: flex;
+  align-items: center;
+ } 
+ .original-price > p{
+  font: 400 1.4vmax "Rubik";
+ }
   .cut-line {
-    position: absolute;
-    top: 50%;
-    left: 0;
+    position: relative;
+    top: -0.8vmax;
     width: 100%;
     height: 1px;
     background-color: #555; /* Updated line color */
   }
   
   .product_price_off {
+    margin-top: 0.6vmax;
+    width: 50%;
+    justify-content: space-between;
     display: flex;
     align-items: center;
   }
   
   .product_price_off .discount {
     color: red;
-    font-weight: bold;
-    margin-right: 10px;
+     font: 400 1.5vmax "Rubik"; 
   }
   
-  .product_price_off > p {
-    position: relative;
-    top: 1.2rem;
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: #333; /* Updated text color */
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .product_price_off > .product_price {
-    width: auto;
-    background-color: #555; /* Updated background color */
-    color: #ffffff;
-    margin-left: 14px;
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: 300;
-    font-size: 1.5rem;
+  .product_price_off > .product_price{
     display: flex;
     align-items: center;
   }
   
+  .product_price_off > .product_price > svg {
+    font: 400 1vmax "Roboto";
+  }
+  .product_price_off > .product_price > p{
+    font:500 1.5vmax "Rubik" ;
+  }
+ 
+          
+         
+          
+          .special_deal_box  .total-price{
+              display: flex;
+              align-items: center;
+              width: 50%;
+              justify-content: space-between;
+              font: 500 1.2vmax "Rubik";
+              color: #000080;
+              box-sizing: border-box;
+              padding: 5px 1px;
+              background-color: #f0f0f0;
+        }
+
   /* .company-details-container {
     width: 20vw;
     display: flex;
@@ -220,8 +230,10 @@
   .create-review{
     display: flex;
     flex-direction: column;
+    
   }
   .create-review > p{
+    margin: 0.5vmax 0;
     font: 400 1.3vmax "Rubik";
     color: #000080;
   }
@@ -369,16 +381,16 @@
     
     .stock-status {
       margin-top: 1vmax;
-      width: 50%;
+      width: 100%;
      display: flex;
-    justify-content: space-between;
+   
     align-items: center;
     }
     .stock-status > span{
       font:600 1.2vmax "Rubik"; 
     }
     .stock-status > p{
-     
+     margin-left: 0.5vmax;
       font:500 1.2vmax "Rubik";
     }
     .inStock {
@@ -482,6 +494,7 @@
     .product-reviews {
       width: 100%;
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       
     }
@@ -508,6 +521,7 @@
            
           }
           .product-redColor{
+           
             color: red;
            
           }
@@ -572,6 +586,51 @@
             box-sizing: border-box;
             padding: 20px;
           }
+          .cart_product_info {
+           
+            width: 70%;
+            
+            display: flex;
+            background-color: #eee;
+            flex-direction: column;
+           align-items: center;
+            justify-content: space-evenly;
+            color: #ffff;
+            margin: 0 auto;
+            padding-top: 8px;
+            margin-bottom: 1rem;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          }
+          
+          .cart_product_info  .name {
+            color: #007185;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            padding: 6px;
+          }
+          
+          .cart_product_info .product_id {
+            font-family: 'Roboto', sans-serif;
+            color: red;
+            font-weight: 300;
+            font-size: 0.8rem;
+          }
+         
+          .cart_product_info .price {
+            color: #111;
+            font: 400 1.5vmax "Rubik";
+            margin-left: 1vmax;
+          }
+          .cart_product_info .price > svg{
+           font: 300 12px "Roboto";
+          }
+          .cart_product_info .price > span {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: #ad3e18;
+          }
           
           .items-details {
             width: 100%;
@@ -592,38 +651,37 @@
           
           
           .product_rating {
-            font-size: 1rem;
-            color: #555; /* Updated text color */
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: space-between;
+            display: flex; 
+            align-items: center;
           }
           .product_rating > p{
-            position: relative;
-            left: -10rem;
+           margin-left: 5vmax;
             font: 400 1vmax "Rubik"; 
             color: #6A5ACD;
           }
           .special_deals_container {
             width: 100%;
-            height: 16vh;
             margin-bottom: 1rem;
-            padding-bottom: 10px;
+           padding: 1vmax 0.5vmax;
             border: 1px solid #e0e0e0; /* Updated border color */
             box-shadow: 0px -1px 3px 0px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+          box-sizing: border-box;
           }
-          
+        
           .special_deal_box {
             display: flex;
-            position: relative;
-            top: 1rem;
-            left: 1rem;
+          
             flex-direction: column;
           }
-          
-          .special_deal_box > div > span {
-            width: 20vw;
+          .special_deal{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            justify-content: space-between;
+          }
+          .special_deal > span{
+            padding: 3px 4px;
             background-color: #ff5252;
             border-radius: 7px;
             padding: 5px;
@@ -631,62 +689,74 @@
             font-size: 0.9rem;
             font-family: 'Roboto', sans-serif;
           }
+         
           
-          .price-tag {
+          .special_deal .price-tag {
             display: inline-block;
-            padding: 10px;
-            width: 15vw;
+            padding: 5px 1px;
+           
             font-family: 'Roboto', sans-serif;
-            font-size: 12px;
+            font-size: 15px;
+          
             font-weight: 500;
             background-color: #f0f0f0;
-            position: relative;
-            margin-top: 1rem;
+        
             border-radius: 5px;
           }
-          
+         .original-price{
+          display: flex;
+          align-items: center;
+         } 
+         .original-price > svg{
+          font: 400 1.3vmax "Roboto";
+         }
+         .original-price > p{
+          font: 400 1.7vmax "Rubik";
+         }
           .cut-line {
-            position: absolute;
-            top: 50%;
-            left: 0;
+            position: relative;
+            top: -1vmax;
             width: 100%;
             height: 1px;
             background-color: #555; /* Updated line color */
           }
           
           .product_price_off {
+            margin-top: 0.6vmax;
+            width: 50%;
+            justify-content: space-between;
             display: flex;
             align-items: center;
           }
           
           .product_price_off .discount {
             color: red;
-            font-weight: bold;
-            margin-right: 10px;
+             font: 400 1.6vmax "Rubik"; 
           }
           
-          .product_price_off > p {
-            position: relative;
-            top: 1.2rem;
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #333; /* Updated text color */
-            font-family: 'Roboto', sans-serif;
-          }
-          
-          .product_price_off > .product_price {
-            width: auto;
-            background-color: #555; /* Updated background color */
-            color: #ffffff;
-            margin-left: 14px;
-            padding: 5px;
-            border-radius: 5px;
-            font-weight: 300;
-            font-size: 1.5rem;
+          .product_price_off > .product_price{
             display: flex;
             align-items: center;
           }
-        
+          
+          .product_price_off > .product_price > svg {
+            font: 400 1.3vmax "Roboto";
+          }
+          .product_price_off > .product_price > p{
+            font:500 1.7vmax "Rubik" ;
+          }
+          .special_deal_box  .total-price{
+              display: flex;
+              align-items: center;
+              width: 50%;
+              justify-content: space-between;
+              font: 500 1.7vmax "Rubik";
+              color: #000080;
+              box-sizing: border-box;
+              padding: 5px 1px;
+              background-color: #f0f0f0;
+        }
+
           .create-review{
             display: flex;
             flex-direction: column;
@@ -725,10 +795,12 @@
           .product_details_right {
             
          width: 100%;
-           padding: 1vmax;
+          height: 39vh;
+          box-sizing: border-box;
+          padding: 1vmax 3px;
            box-sizing: border-box;
             margin-top: -2vmax;
-            padding: 8px;
+           
             display: flex;
         
             flex-direction: column;
@@ -737,58 +809,10 @@
             border-radius: 10px; /* Rounded corners */
           }
           
-          .cart_product_info {
-            width: 70%;
-            height: 15vh;
-            display: flex;
-            background-color: #eee;
-            flex-direction: column;
-           align-items: center;
-            justify-content: space-evenly;
-            color: #ffff;
-            margin: 0 auto;
-            padding-top: 8px;
-            margin-bottom: 1rem;
-            padding-bottom: 5px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-          }
-          
-          .cart_product_info  .name {
-            color: #007185;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.1rem;
-            padding: 6px;
-          }
-          
-          .cart_product_info .product_id {
-            font-family: 'Roboto', sans-serif;
-            color: red;
-            font-weight: 300;
-            font-size: 0.8rem;
-          }
-          .cart_product_info .brand_name{
-            color: #d12013;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-          }
-          .cart_product_info .price {
-            color: #111;
-            font: 400 1.5vmax "Rubik";
-            margin-left: 1vmax;
-          }
-          .cart_product_info .price > svg{
-           font: 300 12px "Roboto";
-          }
-          .cart_product_info .price > span {
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 300;
-            color: #ad3e18;
-          }
-          
+         
           .user_address {
             width: 95%;
+            
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -810,8 +834,8 @@
             margin-top: 1rem;
             padding: 5px;
               flex-direction: column;
-              background-color: #fff;
-              box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.1);
+              
+              box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.1);
             align-items: center;
               margin-bottom: 20px;
              
@@ -821,16 +845,16 @@
               margin-bottom: 8px;
               font-family: 'Roboto', sans-serif;
               text-align: center;
-              background-color: gray;
+              background-color: transparent;
               border-radius: 3px;
               font-weight: bold;
             }
             
             .dropdown {
             width: 70%;
-            height: 3vh;
+             padding: 6px 0;
             margin-top: 0.4vmax;
-              font-size: 11px;
+              font-size: 14px;
               border: 1px solid #fff;
              text-align: center;
               border-radius: 4px;
@@ -842,18 +866,18 @@
             }
 
             .stock-status {
-              width: 50%;
+              margin-top: 1vmax;
+              width: 100%;
              display: flex;
-             justify-content: space-between;
-             align-items: center;
-             
+           
+            align-items: center;
             }
             .stock-status > span{
-              font:600 1.5vmax "Rubik"; 
+              font:600 1.2vmax "Rubik"; 
             }
             .stock-status > p{
-             position: relative;
-              font:500 1.8vmax "Rubik";
+             margin-left: 0.5vmax;
+              font:500 1.2vmax "Rubik";
             }
             .inStock {
               color: #4caf50;
@@ -945,7 +969,7 @@
             .product-reviews {
               width: 100%;
               display: flex;
-         
+             justify-content: center;
               flex-wrap: wrap;
             }
             

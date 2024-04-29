@@ -178,9 +178,7 @@ const ProductDetail = () => {
                     <p className={styles["product_id"]}>{id}</p>
                     <div className={styles["price"]}>
                       <FaRupeeSign />
-                      {discountedPrice && selectedQuantity
-                        ? (discountedPrice * selectedQuantity).toFixed(2)
-                        : "N/A"}
+                      {price}
                       <span>
                         <IoPricetagOutline />
                       </span>
@@ -192,39 +190,59 @@ const ProductDetail = () => {
                     </div>
                     <div className={styles["product_rating"]}>
                       <RatingStar {...options} rating={ratings} />
+
                       {reviews && reviews.length && (
                         <p>{`(${reviews.length} Reviews)`}</p>
                       )}
                     </div>
                   </div>
-                  <div className={styles["special_deals_container"]}>
-                    <div className={styles["special_deal_box"]}>
-                      <div>
-                        <span>Deal of the Day</span>
-                      </div>
-                      {discount > 0 ? (
-                        <div className={styles["price-tag"]}>
-                          <FaRupeeSign /> {price}
-                          <div className={styles["cut-line"]}></div>
+                  {discount > 0 ? (
+                    <div className={styles["special_deals_container"]}>
+                      <div className={styles["special_deal_box"]}>
+                        <div className={styles["special_deal"]}>
+                          <span>Deal of the Day</span>
+                          {discount > 0 ? (
+                            <div className={styles["price-tag"]}>
+                              <div className={styles["original-price"]}>
+                                <FaRupeeSign />
+                                <p> {price}</p>
+                              </div>
+                              <div className={styles["cut-line"]}></div>
+                            </div>
+                          ) : (
+                            ""
+                          )}
                         </div>
-                      ) : (
-                        ""
-                      )}
-                      <div className={styles["product_price_off"]}>
-                        {discount > 0 ? (
-                          <p
-                            className={styles["discount"]}
-                          >{`${discount} % off `}</p>
-                        ) : (
-                          ""
-                        )}
-                        <p className={styles["product_price"]}>
-                          <FaRupeeSign />
-                          {discountedPrice ? discountedPrice.toFixed(2) : "N/A"}
-                        </p>
+                        <div className={styles["product_price_off"]}>
+                          {discount > 0 ? (
+                            <p
+                              className={styles["discount"]}
+                            >{`${discount} % off `}</p>
+                          ) : (
+                            ""
+                          )}
+                          <p className={styles["product_price"]}>
+                            <FaRupeeSign />
+                            <p>
+                              {discountedPrice
+                                ? discountedPrice.toFixed(2)
+                                : "N/A"}
+                            </p>
+                          </p>
+                        </div>
+                        <div className={styles["total-price"]}>
+                          <p>Your Total</p>
+                          <div>
+                            {discountedPrice && selectedQuantity
+                              ? (discountedPrice * selectedQuantity).toFixed(2)
+                              : "N/A"}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    ""
+                  )}
                   <div className={styles["create-review"]}>
                     <p>
                       Your opinion matters! Write a review and let your voice be
@@ -311,9 +329,9 @@ const ProductDetail = () => {
                   <span>Status: </span>
                   {"  "}
                   {stock > 0 ? (
-                    <p className={styles.inStock}>In Stock</p>
+                    <p className={styles["inStock"]}>In Stock</p>
                   ) : (
-                    <p className={styles.outStock}>Out of Stock</p>
+                    <p className={styles["outStock"]}>Out of Stock</p>
                   )}
                 </div>
                 <hr className={styles["lines"]} />
