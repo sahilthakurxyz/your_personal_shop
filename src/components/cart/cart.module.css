@@ -1,0 +1,353 @@
+.cart-mainContainer{
+    
+    background-color: #dbd7d7;
+    width: 99%;
+    margin-top: 6rem;
+    box-sizing: border-box;
+    padding: 13px 0px;
+    margin-bottom: 10px;
+ }
+ .cart-container{
+     display: flex;
+     justify-content: space-evenly;
+ }
+ .cart-items-main{
+     width: 70%;
+     background-color: #fff;
+     display: flex;
+     flex-direction: column;   
+     padding: 1vmax ;
+ }
+ .cart-header-main{
+     display: flex;
+     justify-content: space-between;
+   
+     display: flex;
+   
+     border-bottom: 1px solid #e3dada;
+ }
+ .cart-header-main .heading{
+   box-sizing: border-box;
+   padding: 5px;
+   font-size: 2vmax;
+   font-weight: 500;
+   font-family: 'Rubik', sans-serif;
+ }
+ .cart-header-main .price{
+     position: relative;
+     top: 3rem;
+     left: -2vmax;
+     font-size: 1.2vmax;
+     color: gray;
+   font-weight: 500;
+   font-family: 'Roboto', sans-serif;
+ }
+ .cart-items-box{
+   display: flex;
+   flex-direction: column;
+ 
+ }
+ .no-products-available > .no-product-message{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 60vh;
+ 
+ }
+ .no-product-message > svg{
+   font-size: 10vmax;
+ }
+ .no-product-message > p{
+   font-size: 1.2vmax;
+     color: gray;
+   font-weight: 500;
+   font-family: 'Roboto', sans-serif;
+ }
+ .no-products-available .text{
+   font-size: 1.2vmax;
+   color: #9da35d;
+ font-weight: 500;
+ font-family: 'Roboto', sans-serif;
+ }
+ .sub-total{
+  
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   box-sizing: border-box;
+   padding: 1vmax 0;
+ }
+ .sub-total > p{
+  font: 500 1.2vmax "Rubik";
+   margin-right: 10px;
+ }
+ .sub-total div{
+   display: flex;
+   align-items: center;
+   
+ }
+ .sub-total div svg{
+    color: gray;
+    font: 400 1vmax "Rubik";
+  }
+ .sub-total div p{
+   font-size: 17px;
+   font-weight: 500;
+   font-family: 'Roboto', sans-serif;
+ }
+
+ .cart-subTotal-main{
+   width: 25%;
+   overflow: hidden;
+   height: 25vh;
+ }
+ .cart-subtotal-container{
+   width: 100%;
+   
+   padding: 1vmax;
+  
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   background-color: #fff;
+ }
+ .cart-subtotal-first{
+   display: flex;
+   align-items: center;
+ }
+ .cart-subtotal-first > div > p{
+   font-size: 12px;
+   font-weight: 400;
+   margin-left: 5px;
+   color: #085c23;
+   font-family: 'Roboto', sans-serif;
+ }
+ .cart-subtotal-first > svg{
+   color: #085c23;
+ }
+ .pay-subtotal{
+ 
+   display: flex;
+   justify-content: flex-start;
+ }
+ .pay-subtotal > p{
+   font-weight: 500;
+   font-size: 19px;
+   font-family: 'Rubik', sans-serif;  
+   margin-right: 10px;
+ }
+ .pay-subtotal div{
+   display: flex;
+   align-items: center;
+   
+ }
+ .pay-subtotal div p{
+   margin-left: 0.3vmax;
+   font-size: 19px;
+   font-weight: 500;
+ 
+   font-family: 'Roboto', sans-serif;
+ }
+ .pay-subtotal div svg{
+   font-size: 12px;
+   color: gray;
+ }
+ 
+ .cart-button-proceed {
+   display: flex;
+   justify-content: center;
+  
+ }
+ .cart-button-proceed > button{
+   background-color: #ccdb21;
+   color: #111;
+   width: 20vw;
+   margin-top: 1vmax;
+   margin-left: -1.8vmax;
+   padding: 1vmax 0.3vmax;
+   border: none;
+   border-radius: 7px;
+   font-size: 15px;
+   font-weight: 500;
+   font-family: 'Rubik', sans-serif;
+   transition: all 0.3s;
+ }
+ .cart-button-proceed > button:hover{
+   background-color: #adb550;
+   color: #fff;
+   transform: scale(1.1);
+ }
+ @media screen and (max-width:600px) {
+  .cart-mainContainer{ 
+    margin-top: 3.2rem;
+
+ }
+ .cart-container{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+    
+ }
+ .cart-items-main{
+     width: 99%;
+     background-color: #fff;
+     display: flex;
+     margin: 0;
+     box-sizing: border-box;
+     flex-direction: column;   
+     
+ }
+ .cart-header-main{
+     display: flex;
+     justify-content: space-between;
+   
+   
+   
+     border-bottom: 1px solid #e3dada;
+ }
+ .cart-header-main .heading{
+   box-sizing: border-box;
+   padding: 5px;
+   font-size: 2vmax;
+   font-weight: 500;
+   font-family: 'Rubik', sans-serif;
+ }
+ .cart-header-main .price{
+     position: relative;
+     top: 3rem;
+     left: -12vmax;
+     font-size: 1.5vmax;
+     color: gray;
+   font-weight: 500;
+   font-family: 'Roboto', sans-serif;
+ }
+ .cart-items-box{
+   display: flex;
+   flex-direction: column;
+ 
+ }
+ .no-products-available > .no-product-message{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 60vh;
+ 
+ }
+ .no-product-message > svg{
+   font-size: 10vmax;
+ }
+ .no-product-message > p{
+   font-size: 1.2vmax;
+     color: gray;
+   font-weight: 500;
+   font-family: 'Roboto', sans-serif;
+ }
+ .no-products-available .text{
+   font-size: 1.2vmax;
+   color: #9da35d;
+ font-weight: 500;
+ font-family: 'Roboto', sans-serif;
+ }
+ .sub-total{
+  width: 80%;
+   display: flex;
+   box-sizing: border-box;
+   justify-content: flex-start;
+   align-items: center;
+   box-sizing: border-box;
+   padding: 0.6vmax 0.4vmax;
+ }
+ .sub-total > p{
+  font: 500 1.6vmax "Rubik";
+   margin-right: 6px;
+ }
+
+ .sub-total div svg{
+    color: gray;
+    font: 400 1.4vmax "Rubik";
+  }
+ .sub-total div p{
+   font: 400 1.7vmax "Roboto";
+ }
+
+ .cart-subTotal-main{
+  margin-top: 0.5vmax;
+   width: 100%;
+   overflow: hidden;
+   height: 15vh;
+   box-sizing: border-box;
+ }
+ .cart-subtotal-container{
+   width: 100%;
+   padding: 1vmax;
+  height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   background-color: #fff;
+ }
+ .cart-subtotal-first{
+   display: flex;
+   align-items: center;
+   margin-top: 1vmax;
+ }
+ .cart-subtotal-first > div > p{
+   font-size: 13px;
+   font-weight: 400;
+   margin-left: 5px;
+   color: #085c23;
+   font-family: 'Roboto', sans-serif;
+ }
+ .cart-subtotal-first > svg{
+   color: #085c23;
+   font-size: 12px;
+ }
+ .pay-subtotal{
+  margin-top: 1vmax;
+   display: flex;
+   justify-content: flex-start;
+ }
+ .pay-subtotal > p{
+   font-weight: 500;
+   font-size: 15px;
+   font-family: 'Rubik', sans-serif;  
+   margin-right: 10px;
+ }
+ .pay-subtotal div{
+   display: flex;
+   align-items: center;
+   
+ }
+ .pay-subtotal div p{
+   margin-left: 0.3vmax;
+   font-size: 17px;
+   font-weight: 500;
+ 
+   font-family: 'Roboto', sans-serif;
+ }
+ .pay-subtotal div svg{
+   font-size: 11px;
+   color: gray;
+ }
+ 
+ .cart-button-proceed {
+   display: flex;
+   justify-content: center;
+   margin-top: 1vmax;
+ }
+ .cart-button-proceed > button{
+   background-color: #ccdb21;
+   color: #111;
+   width: 70%;
+   margin-top: 1vmax;
+   margin-left: -8vmax;
+   padding: 1vmax 0.3vmax;
+   border: none;
+   border-radius: 7px;
+   font-size: 13px;
+   font-weight: 500;
+   font-family: 'Rubik', sans-serif;
+   transition: all 0.3s;
+ }
+
+ }

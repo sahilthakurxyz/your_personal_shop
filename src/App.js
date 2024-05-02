@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import Account from "./components/Authentication/Account";
 import ProtectedRoute from "./components/route/ProtectedRoute";
 import Dashboard from "./components/Admin/Dashboard";
+import Cart from "./components/cart/Cart";
 
 function App() {
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -43,6 +44,14 @@ function App() {
           element={
             <MainLayout>
               <Products />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <MainLayout>
+              <Cart />
             </MainLayout>
           }
         />

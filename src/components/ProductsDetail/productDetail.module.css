@@ -542,7 +542,7 @@
         width: 95%; 
         height: 46vh;
       
-        padding: 3vmax 1vmax;
+        padding: 4vmax 1vmax;
         box-sizing: border-box;
         background-color: #eee;
         overflow: hidden;
@@ -571,7 +571,7 @@
           }
           
            .carousel-image.active {
-            transform: scale(1.1);
+            transform: scale(0.9);
             box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
           }
           .product-details-center {

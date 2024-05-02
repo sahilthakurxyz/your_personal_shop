@@ -11,7 +11,7 @@ import RatingStar from "../labels/RatingStar.js";
 import Product2 from "./Product2.js";
 import HomeProducts from "./HomeProducts.js";
 import { allProductClearError } from "../../redux/reducers/productReducer.js";
-import { LoginLoader } from "../../basics/Spinner.js";
+import { Loader } from "../../basics/Spinner.js";
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -79,7 +79,7 @@ const Home = () => {
     <Fragment>
       <MetaData title="Discover Amazing Deals at Your Ultimate Shopping Destination" />
       {loading ? (
-        <LoginLoader />
+        <Loader />
       ) : (
         <div className={styles["home-main-container"]}>
           <Banner />

@@ -27,4 +27,5 @@ const LoginLoader = () => {
     </div>
   );
 };
+
 export { ButtonSpinner, Loader, LoginLoader };

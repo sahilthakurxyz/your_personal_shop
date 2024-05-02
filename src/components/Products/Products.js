@@ -18,9 +18,8 @@ const Products = () => {
   const [category, setCategory] = useState("");
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { products, error, productsPerPage, filterProductsCount } = useSelector(
-    (state) => state.products
-  );
+  const { products, error, loading, productsPerPage, filterProductsCount } =
+    useSelector((state) => state.products);
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -53,7 +52,7 @@ const Products = () => {
     "Headphones",
     "Jeans",
   ];
-  let loading = false;
+
   return (
     <Fragment>
       {loading ? (
