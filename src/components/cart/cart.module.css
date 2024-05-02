@@ -274,7 +274,7 @@
   margin-top: 0.5vmax;
    width: 100%;
    overflow: hidden;
-   height: 15vh;
+   height: 17vh;
    box-sizing: border-box;
  }
  .cart-subtotal-container{
@@ -341,11 +341,12 @@
    width: 70%;
    margin-top: 1vmax;
    margin-left: -8vmax;
-   padding: 1vmax 0.3vmax;
+   padding: 1.5vmax 0.3vmax;
    border: none;
    border-radius: 7px;
    font-size: 13px;
    font-weight: 500;
+
    font-family: 'Rubik', sans-serif;
    transition: all 0.3s;
  }

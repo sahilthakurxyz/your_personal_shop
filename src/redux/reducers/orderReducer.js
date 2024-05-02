@@ -36,7 +36,7 @@ const myOrdersSlice = createSlice({
   },
   reducers: {
     myOrdersRequest: (state) => {
-      state.loading = false;
+      state.loading = true;
     },
     myOrdersSuccess: (state, action) => {
       state.loading = false;
@@ -60,7 +60,7 @@ const orderDetailsSlice = createSlice({
   },
   reducers: {
     orderDetailsRequest: (state) => {
-      state.loading = false;
+      state.loading = true;
     },
     orderDetailssSuccess: (state, action) => {
       state.loading = false;

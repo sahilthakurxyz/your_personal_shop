@@ -314,7 +314,7 @@ outline: none;
           justify-content: flex-end;
           box-sizing: border-box;
           margin-left: 7vmax;
-       
+         margin-top: 1vmax;
         }
         .price-box .offerContainer > p{
           text-align: center;
@@ -333,6 +333,7 @@ outline: none;
          border-radius: 5px;
         }
         .price-box .m-r-p{
+          margin-top: -1vmax;
         display: flex;
         align-items: center;
          justify-content: flex-end;
@@ -340,7 +341,6 @@ outline: none;
         .price-box .m-r-p >p{
           font: 400 1.4vmax "Rubik";
         }
-       
         .price-box  .m-r-p > div > svg{
           color: gray;
           font: 400 1.2vmax "Roboto";

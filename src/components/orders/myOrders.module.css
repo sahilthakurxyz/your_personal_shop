@@ -1,0 +1,46 @@
+.myOrder-main{
+    margin-top: 5rem;
+    width:98%;
+    box-sizing: border-box;
+    
+   padding: 5px 3px;
+   display: flex;
+   flex-direction: column;
+}
+.myOrders-page{
+    background-color: white;
+}
+.data-grid-main-container{
+background-color: gray;
+}
+.data-grid-main-container div{
+    color: #fff;
+    font: 400 1vmax "Rubik";
+}
+.data-grid-main-container  a {
+    color: rgba(0, 0, 0, 0.527);
+    transition: all 0.5s;
+    font-size: 23px;
+  }
+  .data-grid-main-container  a:hover{
+    background-color: #fff;
+    color: RED;
+    border-radius: 8px;
+  }
+  
+.heading-owner{
+    text-align: center;
+    font: 400 1.2vmax "Roboto";
+    padding: 0.5vmax;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    transition: all 0.5s;
+    background-color: rgb(44, 44, 44);
+}
+
+.greenColor{
+    color: green;
+}
+.redColor{
+    color: red;
+}

@@ -1,0 +1,185 @@
+.orderDetails-order-container{
+    margin-top: 7.5vmax;
+    display: grid;
+     grid-template-columns: 5fr 3fr;
+    }
+    .greenColor{
+        color: green;
+    }
+    .redColor{
+        color: red;
+    }
+    .orderDetails-shipping-area{
+        padding: 2vmax 5vmax;
+        padding-bottom: 0%;
+    }
+    .orderDetails-shipping-area > p{
+        padding: 0.6vmax 0;
+        border-bottom: 1px solid #bec5cf;
+        width: 20%;
+        text-align: center;
+        font: 400 1.2vmax "Rubik";
+    }
+    .orderDetails-shipping-area-box > div{
+        display: flex;
+        align-items: center;
+        margin: 1vmax 0;
+    }
+    .orderDetails-shipping-area-box > div > p{
+        font-size: 1vmax;
+        font-weight: 500;
+        font-family:"Roboto",sans-serif;
+    }
+    .orderDetails-shipping-area-box > div > span{
+        margin-left: 1vmax;
+        color: #9da39d;
+        font-size: 1.2vmax;
+        font-weight: 500;
+        font-family:"Rubik",sans-serif;
+    }
+    .orderDetails-cartItems-container{
+        padding: 0 5vmax;
+    }
+    .orderDetails-cartItems-container >  p{
+        padding: 0.6vmax 0;
+        border-bottom: 1px solid #bec5cf;
+        width: 20%;
+        text-align: center;
+        font: 400 1.2vmax "Rubik";
+    }
+    .orderDetails-cartItems-box > div{
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ced4cd;
+        padding: 0.5vmax 1vmax;
+    }
+    .orderDetails-cartItems-box > div > img{
+        
+        width: 12vw;
+        height: 10vh;
+        object-fit: contain;
+    }
+    .orderDetails-cartItems-box > div > .link{
+        text-decoration: none;
+    }
+    .orderDetails-cartItems-box > div div{
+        display: flex;
+        align-items: center;
+    }
+    .orderDetails-cartItems-box > div div > svg{
+        padding-left: 1vmax;
+        color: black;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .orderDetails-cartItems-box > div div > p{
+        padding-left: 1vmax;
+        color: #80827f;
+        font-size: 0.7vmax;
+        font-weight: 400;
+        font-family:"Rubik",sans-serif;
+    }
+    .orderDetails-cartItems-box > div div > div{
+        display: flex;
+        justify-content: space-evenly;
+        width: 20vw;
+        font-size: 1.7vmax;
+        font-weight: 500;
+        font-family:"Rubik",sans-serif;
+    }
+    .orderDetails-cartItems-box > div div > div .quantity{
+        font-size: 1.2vmax;
+        font-weight: 500;
+        font-family:"Rubik",sans-serif;
+    }
+    .orderSummary {
+        padding: 1vmax 7vmax;
+        box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.267);
+        transition: 0.5s;
+      }
+      .orderSummary:hover {
+        padding: 1vmax 7vmax;
+        box-shadow: 1px 2px 7px 2px #fff;
+      }
+      .orderSummary > p {
+        text-align: center;
+        font: 400 1.3vmax "Rubik";
+        border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+        padding: 1vmax;
+        width: 100%;
+        margin: auto;
+        box-sizing: border-box;
+      }
+    
+      .orderSummary > div  {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .orderSummary > div > p{
+        font: 400 1.4vmax "Rubik";
+        color: green;
+      }
+    
+    
+    
+      @media screen and (max-width:600px){
+        .orderDetails-order-container{
+            margin-top: 4rem;
+          display: flex;
+          flex-direction: column;
+         
+        }
+        .orderDetails-shipping-area > p{
+            padding: 0.6vmax 0;
+            border-bottom: 1px solid #bec5cf;
+            width: 40%;
+            text-align: center;
+            font: 400 2vmax "Rubik";
+        }
+    
+        .orderDetails-shipping-area-box > div > p{
+            font-size: 1.6vmax;
+            font-weight: 500;
+            font-family:"Roboto",sans-serif;
+        }
+        .orderDetails-shipping-area-box > div > span{
+            margin-left: 1vmax;
+            color: #9da39d;
+            font-size: 1.7vmax;
+            font-weight: 500;
+            font-family:"Rubik",sans-serif;
+        }
+        .orderDetails-shipping-area-box > div > .address{
+            margin-top: 3vmax;
+        }
+       
+        .orderDetails-cartItems-box > div{
+     display: flex;
+     flex-direction: column;
+    
+     justify-content: flex-start;
+            
+        }
+        .orderDetails-cartItems-box > div img{
+            margin-top: -1vmax;
+           width: 34vw;
+           height: 30vh;
+        }
+        .orderDetails-cartItems-box > div .name{
+            font-size: 1.7vmax;
+        }
+        .orderDetails-cartItems-box  .quantity{
+            font-size: 40px;
+      
+            margin-left: 5vmax;
+        }
+       
+        .orderSummary {
+            
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 3vmax;
+          }
+        
+      }

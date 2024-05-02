@@ -13,6 +13,10 @@ import Account from "./components/Authentication/Account";
 import ProtectedRoute from "./components/route/ProtectedRoute";
 import Dashboard from "./components/Admin/Dashboard";
 import Cart from "./components/cart/Cart";
+import ProfileUpdate from "./components/Authentication/ProfileUpdate";
+import MyOrders from "./components/orders/MyOrders";
+import OrdersDetail from "./components/orders/OrdersDetail";
+import PasswordUpdate from "./components/Authentication/PasswordUpdate";
 
 function App() {
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -48,6 +52,14 @@ function App() {
           }
         />
         <Route
+          path="/products/:keyword"
+          element={
+            <MainLayout>
+              <Products />
+            </MainLayout>
+          }
+        />
+        <Route
           path="/cart"
           element={
             <MainLayout>
@@ -61,6 +73,42 @@ function App() {
             <ProtectedRoute isAuthenticated={isAuthenticated}>
               <MainLayout>
                 <Account />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/update/profile"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProfileUpdate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/update/password"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <PasswordUpdate />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <MyOrders />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orders/:id"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <OrdersDetail />
               </MainLayout>
             </ProtectedRoute>
           }

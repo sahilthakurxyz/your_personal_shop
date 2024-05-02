@@ -107,3 +107,36 @@
 .black{
     color: black;
 }
+@media screen and (max-width:600px) {
+    .profile-container{
+        margin-top: 3.8rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+       padding: 1vmax;
+       box-sizing: border-box;
+    }
+    .left-heading{
+        font-size: 20px;
+    }
+    .left-user-image{
+        height: 25vh;
+        width: 45vw;
+        margin-left: 6vmax;
+       
+       
+       
+    }
+   
+    .user-profile-button {
+        margin-top: 2vmax;
+        margin-left: 5vmax;
+        padding: 7px;
+        border-radius: 3px;
+        width: 50%;
+        background-color: #405166;
+        border: none;
+    }
+   
+}
