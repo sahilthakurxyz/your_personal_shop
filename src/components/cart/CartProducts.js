@@ -38,37 +38,39 @@ const CartProducts = ({ item }) => {
   return (
     <div className={styles["item-main-box"]}>
       <div className={styles["item-box"]}>
-        <div className={styles["image-box"]}>
-          <img src={item.image} alt="name" />
-        </div>
-        <div className={styles["details-box"]}>
-          <Link to={`/product/${productId}`} className={styles["link"]}>
-            <p>{item.details}</p>
-          </Link>
-          <div className={styles["item-details"]}>
-            <p className={className}>
-              {stock > 0 ? "In Stock" : "Out of Stock"}
-            </p>
-            <div className={styles["qty"]}>Qty:{quantity}</div>
-            <div>
-              <p>Stock Available :{stock} </p>
+        <div>
+          <div className={styles["image-box"]}>
+            <img src={item.image} alt="name" />
+          </div>
+          <div className={styles["details-box"]}>
+            <Link to={`/product/${productId}`} className={styles["link"]}>
+              <p>{item.details}</p>
+            </Link>
+            <div className={styles["item-details"]}>
+              <p className={className}>
+                {stock > 0 ? "In Stock" : "Out of Stock"}
+              </p>
+              <div className={styles["qty"]}>Qty:{quantity}</div>
+              <div>
+                <p>Stock Available :{stock} </p>
+              </div>
+              <div className={styles["quantity"]}>
+                <input
+                  type="number"
+                  value={qtyItem}
+                  onChange={(e) => setQtyItem(e.target.value)}
+                />
+                <button onClick={onHandleQty}>Qty:Add</button>
+              </div>
+              <button className={styles["delete"]} onClick={handleDelete}>
+                Delete
+              </button>
             </div>
-            <div className={styles["quantity"]}>
-              <input
-                type="number"
-                value={qtyItem}
-                onChange={(e) => setQtyItem(e.target.value)}
-              />
-              <button onClick={onHandleQty}>Qty:Add</button>
-            </div>
-            <button className={styles["delete"]} onClick={handleDelete}>
-              Delete
-            </button>
           </div>
         </div>
         <div className={styles["price-box"]}>
           {discount > 0 && (
-            <div>
+            <div className={styles["price-box-container"]}>
               <div className={styles["offerContainer"]}>
                 <p>Deal of the day</p>
                 <button

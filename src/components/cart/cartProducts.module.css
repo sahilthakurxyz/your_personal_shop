@@ -6,7 +6,11 @@
     display: grid;
     padding: 1vmax;
     box-sizing: border-box;
-    grid-template-columns: 1fr 3fr 0.8fr;
+    grid-template-columns: 4fr 0.8fr;
+    }
+    .item-box > div{
+      display: grid;
+      grid-template-columns: 1fr 3fr;
     }
     .item-box  .image-box  img{
       width: 15vw;
@@ -236,12 +240,12 @@ outline: none;
           width: 100%; /* Occupy full width of the container */
           height: 100%;
           overflow: hidden;
-          max-height: 6vmax;
+          max-height: 7vmax;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
-          font-size: 12px!important;
+          font-size: 11px!important;
           line-height: 20px!important;
         }
        
@@ -296,21 +300,21 @@ outline: none;
      
      }
         .item-box .price-box{
-          position: absolute;
-          display: flex;
-          justify-content: flex-start;
-          flex-direction: column;
-          width: 40vw;
-        top: 10rem;
-        left: 10rem;
-          
+        
+          width: 100%; 
         }
-       
+        .item-box .price-box > .price-box-container{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
         .item-box .price-box  .offerContainer{
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-    
+          box-sizing: border-box;
+          margin-left: 7vmax;
+       
         }
         .price-box .offerContainer > p{
           text-align: center;
@@ -329,8 +333,6 @@ outline: none;
          border-radius: 5px;
         }
         .price-box .m-r-p{
-          margin-top: 2vmax;
-    
         display: flex;
         align-items: center;
          justify-content: flex-end;
