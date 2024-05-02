@@ -1,0 +1,274 @@
+.confirm-order-container{
+    height: 100vh;
+   padding: 10px;
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+}
+.confirm-shipping-area{
+    padding: 2vmax 5vmax;
+    padding-bottom: 0%;
+}
+.confirm-shipping-area > p{
+    padding: 0.6vmax 0;
+    border-bottom: 1px solid #bec5cf;
+    width: 20%;
+    text-align: center;
+    font: 400 1.2vmax "Rubik";
+}
+.confirm-shipping-area-box > div{
+    display: flex;
+    align-items: center;
+    margin: 1vmax 0;
+}
+.confirm-shipping-area-box > div > p{
+    font-size: 1vmax;
+    font-weight: 500;
+    font-family:"Roboto",sans-serif;
+}
+.confirm-shipping-area-box > div > span{
+    margin-left: 1vmax;
+    color: #9da39d;
+    font-size: 1.2vmax;
+    font-weight: 500;
+    font-family:"Rubik",sans-serif;
+}
+.confrim-cartItems-container{
+    padding: 0 5vmax;
+}
+.confirm-cartItems-box > div{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ced4cd;
+    padding: 0.5vmax 1vmax;
+}
+.confirm-cartItems-box > div > img{
+    
+    width: 17vw;
+    height: 27vh;
+    object-fit: contain;
+}
+.confirm-cartItems-box > div > .link{
+    text-decoration: none;
+}
+.confirm-cartItems-box > div div{
+    display: flex;
+    align-items: center;
+}
+.confirm-cartItems-box > div div > svg{
+    padding-left: 1vmax;
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+}
+.confirm-cartItems-box > div div > p{
+    padding-left: 1vmax;
+    color: #80827f;
+    font-size: 1.2vmax;
+    font-weight: 500;
+    font-family:"Rubik",sans-serif;
+}
+.confirm-cartItems-box > div div > div{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20vw;
+    font-size: 1.7vmax;
+    font-weight: 500;
+    font-family:"Rubik",sans-serif;
+}
+.confirm-cartItems-box > div div > div .quantity{
+    font-size: 1.2vmax;
+    font-weight: 500;
+    font-family:"Rubik",sans-serif;
+}
+.orderSummary {
+    padding: 1vmax 7vmax;
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.267);
+    transition: 0.5s;
+  }
+  .orderSummary:hover {
+    padding: 1vmax 7vmax;
+    box-shadow: 1px 2px 7px 2px #fff;
+  }
+  .orderSummary > p {
+    text-align: center;
+    font: 400 1.3vmax "Rubik";
+    border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+    padding: 1vmax;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  .orderSummary > div > div {
+    display: flex;
+    align-items: center;
+    font-size: 1vmax;
+    font-weight: 500;
+    font-family:"Roboto",sans-serif;
+    justify-content: space-between;
+    margin: 2vmax 0;
+  }
+  .orderSummary > div > div > span {
+    color: rgba(0, 0, 0, 0.692);
+  }
+  .orderSummaryTotal {
+    display: flex;
+    align-items: center;
+    font-size: 1vmax;
+    font-weight: 500;
+    font-family:"Roboto",sans-serif;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.363);
+    padding: 2vmax 0;
+  }
+  .orderSummary > button {
+    background-color: red;
+    color: white;
+    width: 100%;
+    padding: 1vmax;
+    border: none;
+    margin: auto;
+    border-radius: 7px;
+
+    cursor: pointer;
+    transition: 0.5s;
+    font: 400 1vmax "Roboto";
+  }
+  
+  .orderSummary > button:hover {
+    transform: scale(1.1);
+    border-radius: 7px;
+    background-color: rgb(192, 71, 50);
+  }
+  @media screen and (max-width:600px){
+    .confirm-order-container{
+      display: flex;
+      flex-direction: column;
+      width: 80vw;
+      padding: 0;
+      margin: 0;
+    }
+   
+    .confirm-shipping-area > p{
+        padding: 0 ;
+        border-bottom: 1px solid #bec5cf;
+        width: 40%;
+        margin: 0;
+        text-align: center;
+        font: 400 2vmax "Rubik";
+    }
+
+    .confirm-shipping-area-box > div > p{
+        font-size: 1.6vmax;
+        font-weight: 500;
+        font-family:"Roboto",sans-serif;
+    }
+    .confirm-shipping-area-box > div > span{
+        
+        color: #9da39d;
+        font-size: 1.7vmax;
+        font-weight: 500;
+        font-family:"Rubik",sans-serif;
+    }
+    .confirm-shipping-area-box > div > .address{
+        margin-top: 3vmax;
+    }
+    .confrim-cartItems-container{
+        padding: 0 0.3vmax;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .confirm-cartItems-box > div{
+ display: flex;
+ justify-content: flex-start;
+ padding: 0;
+   margin: 0;
+    }
+    .confirm-cartItems-box > div img{
+        margin-top: 1vmax;
+       width: 25vw;
+       height: 15vh;
+       object-fit: contain;
+    }
+    .confirm-cartItems-box > div > a > div{
+     display: flex;
+     flex-direction: column;
+    
+  
+    }
+    .confirm-cartItems-box > div > a > div > div{
+        display: flex;
+        justify-content: flex-start;
+       
+    }
+    .confirm-cartItems-box .product-name{
+    width: 46vw;
+    }
+    .confirm-cartItems-box  .detail{
+        margin-left: -15vmax;
+    }
+    .confirm-cartItems-box > div .name{
+        font-size: 1.7vmax;
+    }
+    .confirm-cartItems-box  .quantity{
+        font-size: 40px;
+  
+        margin-left: 5vmax;
+    }
+    .orderSummary {
+        width: 75vw;
+        padding: 1vmax;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.267);
+        transition: 0.5s;
+        margin: 0 1vmax;
+      }
+      .orderSummary > p {
+        text-align: center;
+        font: 400 1.5vmax "Rubik";
+        border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+        padding: 1vmax;
+        width: 90%;
+       
+        margin: auto;
+        box-sizing: border-box;
+      }
+    
+      .orderSummary > div > div {
+        display: flex;
+        align-items: center;
+        font-size: 1.5vmax;
+        font-weight: 500;
+        font-family:"Roboto",sans-serif;
+        justify-content: space-between;
+        margin: 2vmax 0;
+      }
+      .orderSummary > div > div > span {
+        color: rgba(0, 0, 0, 0.692);
+      }
+      .orderSummaryTotal {
+        display: flex;
+        align-items: center;
+        font-size: 1.5vmax;
+        font-weight: 500;
+        font-family:"Roboto",sans-serif;
+        justify-content: space-between;
+        border-top: 1px solid rgba(0, 0, 0, 0.363);
+        padding: 2vmax 0;
+      }
+      .orderSummary > button {
+        background-color: red;
+        color: white;
+        width: 100%;
+        padding: 1vmax;
+        border: none;
+        margin: auto;
+        border-radius: 7px;
+    
+        cursor: pointer;
+        transition: 0.5s;
+        font: 400 1.5vmax "Roboto";
+        margin-bottom: 4vmax;
+      }
+      
+  }

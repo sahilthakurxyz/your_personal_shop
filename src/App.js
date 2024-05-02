@@ -17,6 +17,9 @@ import ProfileUpdate from "./components/Authentication/ProfileUpdate";
 import MyOrders from "./components/orders/MyOrders";
 import OrdersDetail from "./components/orders/OrdersDetail";
 import PasswordUpdate from "./components/Authentication/PasswordUpdate";
+import Shipping from "./components/cart/Shipping";
+import Menu from "./components/layouts/Menu.js";
+import OrderConfirm from "./components/cart/OrderConfirm.js";
 
 function App() {
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -110,6 +113,24 @@ function App() {
               <MainLayout>
                 <OrdersDetail />
               </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/shipping"
+          element={
+            <ProtectedRoute>
+              <Menu />
+              <Shipping />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/order/confirm"
+          element={
+            <ProtectedRoute>
+              <Menu />
+              <OrderConfirm />
             </ProtectedRoute>
           }
         />
