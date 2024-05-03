@@ -24,6 +24,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { attachTokenToRequests, axiosInstance } from "./constants.js";
 import Payment from "./components/cart/Payment.js";
+import PaymentFailed from "./components/cart/PaymentFailed.js";
+import Success from "./components/cart/Success.js";
+import ForgetPassword from "./components/Authentication/ForgetPassword.js";
+import ResetPassword from "./components/Authentication/ResetPassword.js";
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -118,7 +122,7 @@ function App() {
         <Route
           path="/orders"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
               <MainLayout>
                 <MyOrders />
               </MainLayout>
@@ -128,7 +132,7 @@ function App() {
         <Route
           path="/orders/:id"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
               <MainLayout>
                 <OrdersDetail />
               </MainLayout>
@@ -138,7 +142,7 @@ function App() {
         <Route
           path="/shipping"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Menu />
               <Shipping />
             </ProtectedRoute>
@@ -147,7 +151,7 @@ function App() {
         <Route
           path="/order/confirm"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Menu />
               <OrderConfirm />
             </ProtectedRoute>
@@ -165,8 +169,30 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/payment/failed"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <MainLayout>
+                <PaymentFailed />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/success"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <MainLayout>
+                <Success />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forget/password" element={<ForgetPassword />} />
+        <Route path="/reset/password/:token" element={<ResetPassword />} />
         {Object.keys(user).length > 0 && (
           <Route
             path="/admin/dashboard"

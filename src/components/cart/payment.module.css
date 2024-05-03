@@ -149,9 +149,11 @@
       color: green;
     }
     .order-main-container > div > p{
+        margin-top: 1vmax;
       font: 400 1.5vmax "Rubik";
     }
     .order-main-container > div  button{
+        margin-top: 2vmax;
       padding: 7px 10px;
       border-radius: 4px;
       background-color: red;
@@ -180,7 +182,7 @@
       justify-content: center;
     }
     .fail-main-container > div > p{
-      font: 400 1.2vmax "Roboto";
+      font: 400 1.5vmax "Roboto";
       color: #ba544c;
     }
     .fail-main-container > div > svg{
@@ -188,6 +190,7 @@
       color: #d42a1e;
     }
     .fail-main-container > div > button{
+        margin-top: 1.5vmax;
       padding: 8px 8px;
       border-radius: 4px;
       background-color: #bed61e;
@@ -263,7 +266,7 @@
             color: white;
             font: 300 0.9vmax "Roboto";
             width: 50%;
-            padding: 0.8vmax;
+            padding: 1.9vmax 0.8vmax;
             cursor: pointer;
             transition: all 0.5s;
             outline: none;
