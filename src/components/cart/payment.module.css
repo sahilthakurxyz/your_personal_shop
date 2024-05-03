@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     background-color: #583980;
+    box-sizing: border-box;
+    padding: 2vmax;
   }
   .toggleTo-payment {
     height: 100vh;
@@ -135,6 +137,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      box-sizing: border-box;
+      padding: 2vmax;
       height: 90vh;
     }
     .order-main-container > div{

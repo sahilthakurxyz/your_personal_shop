@@ -1,0 +1,52 @@
+.contact-us{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-us > p{
+    font: 500 2vmax "Rubik";
+}
+.contact-us > div{
+    margin-top: 1vmax;
+    width: 50vw;
+    height: 50vh;
+   background-color: #fff;
+   box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, 0.63);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contact-us > div > div{
+    display: flex;
+    width: 100%;
+    
+   height: 8vh;
+   justify-content: center;
+   align-items: center;
+}
+.contact-us > div > div > a{
+    margin-left: 0.5vmax;
+    text-decoration: none;
+}
+.contact-us > div > div > svg{
+    font-size: 2rem;
+}
+.contact-us > div > div > a > p{
+    font: 400 1.7vmax "Rubik";
+    color: #111;
+}
+
+/* About Page */
+.about-us{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.about-us > div > p{
+    font:500 3vmax "Roboto";
+    color: gray;
+}

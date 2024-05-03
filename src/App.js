@@ -9,6 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { axiosInstance } from "./constants.js";
+import NotFound from "./components/layouts/NotFound.js";
+const About = React.lazy(() => import("./components/layouts/About.js"));
+const Contact = React.lazy(() => import("./components/layouts/Contact.js"));
 const Home = React.lazy(() => import("./components/Home/Home"));
 const MainLayout = React.lazy(() => import("./MainLayout"));
 const ProductDetail = React.lazy(() =>
@@ -274,6 +277,30 @@ function App() {
             }
           />
         )}
+        <Route
+          path="/contact"
+          element={
+            <Suspense>
+              <Contact />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Suspense>
+              <About />
+            </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Suspense>
+              <NotFound />
+            </Suspense>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
