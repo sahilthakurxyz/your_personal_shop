@@ -63,4 +63,19 @@
   outline: 1px solid gray;
 }
 
-  
+  @media screen and (max-width:600px) {
+    .user-profile {
+      display: flex;
+      align-items: center;
+      border: 1px solid gray;
+      border-radius: 50%;
+    }
+    .user-profile > p{
+      display: none;
+    }
+    .user-profile  img {
+      width: 2.8vmax;
+      height: 2.8vmax;
+      border-radius: 50%;
+    }
+  }

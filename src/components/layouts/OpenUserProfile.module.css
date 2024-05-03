@@ -1,8 +1,6 @@
 .open {
     opacity: 1;
     pointer-events: auto;
- 
-    
   }
   
 
@@ -109,4 +107,49 @@
     height: 18px;
     margin-right: 15px; 
     color: #333;
+  }
+
+
+  @media screen and (max-width:600px) {
+   
+    .manage-account-container {
+      position: absolute;
+      top:3rem;
+      right: 2rem;
+      
+    }
+    .close-icon {
+      font-size: 25px;
+      
+    }
+    .user-container{
+      margin-top: 1vmax;
+    }
+   
+    .user-container > img{
+      height: 5vmax;
+      width: 5vmax;
+    }
+    .user-details > p{
+     margin-top: 0.2vmax;
+      font-size: 17px;
+      margin-left: 0.5vmax;
+     
+      font-weight: 400;
+    }
+    .account-container {
+      position: relative;
+      width: 100%;
+    }
+    
+   
+  
+    .account-feature-container > div {
+      margin: 1vmax 0;
+    }
+    
+    .account-feature-container > div  {
+    font-size: 20px;
+    }
+   
   }
