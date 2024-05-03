@@ -51,7 +51,7 @@ const Header = () => {
           <div className={styles["header-cart-container"]}>
             <Link to="/cart">
               <AddShoppingCartIcon />
-              <p>2</p>
+              <p>{cartItems?.length}</p>
             </Link>
           </div>
           <div className={styles["header-user-container"]}>

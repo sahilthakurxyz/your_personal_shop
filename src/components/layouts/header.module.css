@@ -26,10 +26,12 @@
  }
  .header-cart-container > a > svg{
     font-size: 30px;
-    color: gray;
+    color: #a16363;
  }
  .header-cart-container > a > p{
     margin-top: 0.8vmax;
+    color: rgb(30, 30, 180);
+    font: 400 1vmax "Roboto";
  }
  .header-user-container > a > p{
      font: 500 1.5vmax "Rubik";
