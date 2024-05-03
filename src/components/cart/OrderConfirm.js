@@ -65,9 +65,15 @@ const OrderConfirm = () => {
                           <p className={styles["name"]}>{item.name}</p>
                         </div>
                         <div className={styles["detail"]}>
-                          <p className={styles["quantity"]}>{item.quantity}</p>{" "}
-                          <p> X</p> <p>{item.price.toFixed(1)}</p> ={" "}
-                          <p>{item.totalPrice.toFixed(2)}</p>
+                          <p className={styles["quantity"]}>{item.quantity}</p>
+                          <p className={styles["p-tag"]}> X</p>{" "}
+                          <p className={styles["p-tag"]}>
+                            {item.price.toFixed(1)}
+                          </p>{" "}
+                          ={" "}
+                          <p className={styles["p-tag"]}>
+                            {item.totalPrice.toFixed(2)}
+                          </p>
                         </div>
                       </div>
                     </Link>

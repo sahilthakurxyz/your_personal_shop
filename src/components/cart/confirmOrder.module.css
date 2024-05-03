@@ -205,16 +205,19 @@
     width: 46vw;
     }
     .confirm-cartItems-box  .detail{
-        margin-left: -15vmax;
+        margin-left: -8vmax;
+        margin-top: 1vmax;
     }
-    .confirm-cartItems-box > div .name{
-        font-size: 1.7vmax;
+       
+        .confirm-cartItems-box  .detail .quantity{
+            font-size: 1.7vmax;
+        }
+    .confirm-cartItems-box  .detail p{
+      font: 400 1.7vmax "Rubik";
+
     }
-    .confirm-cartItems-box  .quantity{
-        font-size: 40px;
-  
-        margin-left: 5vmax;
-    }
+    
+    
     .orderSummary {
         width: 95vw;
         padding: 1vmax;
