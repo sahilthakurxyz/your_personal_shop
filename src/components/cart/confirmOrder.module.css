@@ -262,10 +262,10 @@
       .orderSummary > button {
         background-color: red;
         color: white;
-        width: 100%;
-        padding: 1vmax;
+        width: 90%;
+        padding: 1.8vmax;
         border: none;
-        margin: auto;
+        margin: 0 1.9vmax;
         border-radius: 7px;
     
         cursor: pointer;
