@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React from "react";
 import styles from "./product1.module.css";
 import { Link } from "react-router-dom";
 const Product1 = ({ product }) => {

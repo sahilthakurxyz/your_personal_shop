@@ -36,7 +36,7 @@ const Login = () => {
     if (isAuthenticated) {
       navigate(redirect);
     }
-  }, [dispatch, error, redirect, navigate, isAuthenticated]);
+  }, [dispatch, error, redirect, navigate, isAuthenticated, alert]);
   return (
     <Fragment>
       <div className={styles["login-container"]}>

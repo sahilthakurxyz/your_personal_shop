@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import styles from "./userprofile.module.css";
 import OpenUserProfile from "./OpenUserProfile";
 import { useSelector } from "react-redux";

@@ -79,7 +79,7 @@ const ProductDetail = () => {
       dispatch(clearProductReview());
     }
     dispatch(getProductDetails(id));
-  }, [dispatch, reviewError, alert, success]);
+  }, [dispatch, reviewError, alert, success, id, error]);
 
   // All local module object defined here
   const maxQuantity = Math.min(stock, 10);

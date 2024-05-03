@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./footer.module.css";
-import { Link } from "react-router-dom";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 import { FaAngleDoubleUp } from "react-icons/fa";
 const Footer = () => {
@@ -19,13 +18,17 @@ const Footer = () => {
           <div>
             <p>Know About Us</p>
             <div>
-              <a href="#">comming soon...</a>
+              <a href="https://www.instagram.com/freaky_fred_creep08/">
+                comming soon...
+              </a>
             </div>
           </div>
           <div>
             <p>About us</p>
             <div>
-              <a href="#">comming soon...</a>
+              <a href="https://www.linkedin.com/in/sahil-thakur-735181203/">
+                comming soon...
+              </a>
             </div>
           </div>
           <div>
@@ -45,7 +48,9 @@ const Footer = () => {
           <div>
             <p>Lets Us Help you</p>
             <div>
-              <a href="#">comming soon...</a>
+              <a href="https://www.instagram.com/freaky_fred_creep08/">
+                comming soon...
+              </a>
             </div>
           </div>
         </div>

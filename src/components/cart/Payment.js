@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { useNavigate } from "react-router-dom";
 import { clearError, createNewOrder } from "../../redux/actions/orderAction";
-import { attachTokenToRequests, axiosInstance } from "../../constants";
+import { axiosInstance } from "../../constants";
 import MetaData from "../labels/MetaData";
 const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));

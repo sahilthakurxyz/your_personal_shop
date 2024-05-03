@@ -7,7 +7,7 @@ import Person2Icon from "@mui/icons-material/Person2";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import { useAlert } from "react-alert";
 import { Link, useNavigate } from "react-router-dom";
-import { ButtonSpinner, Loader } from "../../basics/Spinner";
+import { ButtonSpinner } from "../../basics/Spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/actions/userAction";
 import { registerClearError } from "../../redux/reducers/userReducer";

@@ -1,33 +1,54 @@
+import React, { Suspense, useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./components/Authentication/Register";
 import Login from "./components/Authentication/Login";
-import Home from "./components/Home/Home";
-import MainLayout from "./MainLayout";
-import ProductDetail from "./components/ProductsDetail/ProductDetail";
-import Products from "./components/Products/Products";
+import LasyLoad from "./basics/LasyLoad.js";
 import { loadUser } from "./redux/actions/userAction";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import Account from "./components/Authentication/Account";
-import ProtectedRoute from "./components/route/ProtectedRoute";
-import Dashboard from "./components/Admin/Dashboard";
-import Cart from "./components/cart/Cart";
-import ProfileUpdate from "./components/Authentication/ProfileUpdate";
-import MyOrders from "./components/orders/MyOrders";
-import OrdersDetail from "./components/orders/OrdersDetail";
-import PasswordUpdate from "./components/Authentication/PasswordUpdate";
-import Shipping from "./components/cart/Shipping";
-import Menu from "./components/layouts/Menu.js";
-import OrderConfirm from "./components/cart/OrderConfirm.js";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import { attachTokenToRequests, axiosInstance } from "./constants.js";
-import Payment from "./components/cart/Payment.js";
-import PaymentFailed from "./components/cart/PaymentFailed.js";
-import Success from "./components/cart/Success.js";
-import ForgetPassword from "./components/Authentication/ForgetPassword.js";
-import ResetPassword from "./components/Authentication/ResetPassword.js";
+import { axiosInstance } from "./constants.js";
+const Home = React.lazy(() => import("./components/Home/Home"));
+const MainLayout = React.lazy(() => import("./MainLayout"));
+const ProductDetail = React.lazy(() =>
+  import("./components/ProductsDetail/ProductDetail")
+);
+const Products = React.lazy(() => import("./components/Products/Products"));
+const Account = React.lazy(() => import("./components/Authentication/Account"));
+const ProtectedRoute = React.lazy(() =>
+  import("./components/route/ProtectedRoute")
+);
+const Dashboard = React.lazy(() => import("./components/Admin/Dashboard"));
+const Cart = React.lazy(() => import("./components/cart/Cart"));
+const ProfileUpdate = React.lazy(() =>
+  import("./components/Authentication/ProfileUpdate")
+);
+const MyOrders = React.lazy(() => import("./components/orders/MyOrders"));
+const OrdersDetail = React.lazy(() =>
+  import("./components/orders/OrdersDetail")
+);
+const PasswordUpdate = React.lazy(() =>
+  import("./components/Authentication/PasswordUpdate")
+);
+const Shipping = React.lazy(() => import("./components/cart/Shipping"));
+const Menu = React.lazy(() => import("./components/layouts/Menu.js"));
+const OrderConfirm = React.lazy(() =>
+  import("./components/cart/OrderConfirm.js")
+);
+
+const Payment = React.lazy(() => import("./components/cart/Payment.js"));
+const PaymentFailed = React.lazy(() =>
+  import("./components/cart/PaymentFailed.js")
+);
+const Success = React.lazy(() => import("./components/cart/Success.js"));
+const ForgetPassword = React.lazy(() =>
+  import("./components/Authentication/ForgetPassword.js")
+);
+const ResetPassword = React.lazy(() =>
+  import("./components/Authentication/ResetPassword.js")
+);
+
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -56,143 +77,187 @@ function App() {
         <Route
           path="/"
           element={
-            <MainLayout>
-              <Home />
-            </MainLayout>
+            <Suspense fallback={<LasyLoad />}>
+              <MainLayout>
+                <Home />
+              </MainLayout>
+            </Suspense>
           }
         />
         <Route
           path="/product/:id"
           element={
-            <MainLayout>
-              <ProductDetail />
-            </MainLayout>
+            <Suspense fallback={<LasyLoad />}>
+              <MainLayout>
+                <ProductDetail />
+              </MainLayout>
+            </Suspense>
           }
         />
         <Route
           path="/products"
           element={
-            <MainLayout>
-              <Products />
-            </MainLayout>
+            <Suspense fallback={<LasyLoad />}>
+              <MainLayout>
+                <Products />
+              </MainLayout>
+            </Suspense>
           }
         />
         <Route
           path="/products/:keyword"
           element={
-            <MainLayout>
-              <Products />
-            </MainLayout>
+            <Suspense fallback={<LasyLoad />}>
+              <MainLayout>
+                <Products />
+              </MainLayout>
+            </Suspense>
           }
         />
         <Route
           path="/cart"
           element={
-            <MainLayout>
-              <Cart />
-            </MainLayout>
+            <Suspense fallback={<LasyLoad />}>
+              <MainLayout>
+                <Cart />
+              </MainLayout>
+            </Suspense>
           }
         />
         <Route
           path="/account"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <MainLayout>
-                <Account />
-              </MainLayout>
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <MainLayout>
+                  <Account />
+                </MainLayout>
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/update/profile"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <ProfileUpdate />
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <ProfileUpdate />
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/update/password"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <PasswordUpdate />
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <PasswordUpdate />
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/orders"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <MainLayout>
-                <MyOrders />
-              </MainLayout>
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <MainLayout>
+                  <MyOrders />
+                </MainLayout>
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/orders/:id"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <MainLayout>
-                <OrdersDetail />
-              </MainLayout>
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <MainLayout>
+                  <OrdersDetail />
+                </MainLayout>
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/shipping"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Menu />
-              <Shipping />
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Menu />
+                <Shipping />
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/order/confirm"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Menu />
-              <OrderConfirm />
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Menu />
+                <OrderConfirm />
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/process/payment"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              {stripeApiKey && (
-                <Elements stripe={loadStripe(stripeApiKey)}>
-                  <Payment />
-                </Elements>
-              )}
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                {stripeApiKey && (
+                  <Elements stripe={loadStripe(stripeApiKey)}>
+                    <Payment />
+                  </Elements>
+                )}
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/payment/failed"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <MainLayout>
-                <PaymentFailed />
-              </MainLayout>
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <MainLayout>
+                  <PaymentFailed />
+                </MainLayout>
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/success"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <MainLayout>
-                <Success />
-              </MainLayout>
-            </ProtectedRoute>
+            <Suspense fallback={<LasyLoad />}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <MainLayout>
+                  <Success />
+                </MainLayout>
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/forget/password" element={<ForgetPassword />} />
-        <Route path="/reset/password/:token" element={<ResetPassword />} />
+        <Route
+          path="/forget/password"
+          element={
+            <Suspense fallback={<LasyLoad />}>
+              <ForgetPassword />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/reset/password/:token"
+          element={
+            <Suspense fallback={<LasyLoad />}>
+              <ResetPassword />
+            </Suspense>
+          }
+        />
         {Object.keys(user).length > 0 && (
           <Route
             path="/admin/dashboard"
