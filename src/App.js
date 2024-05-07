@@ -261,19 +261,22 @@ function App() {
             </Suspense>
           }
         />
+
         {Object.keys(user).length > 0 && (
           <Route
             path="/admin/dashboard"
             element={
-              <ProtectedRoute
-                isAuthenticated={isAuthenticated}
-                isAdmin={user.role === "admin" ? true : false}
-                adminRoute={true}
-              >
-                <MainLayout>
-                  <Dashboard />
-                </MainLayout>
-              </ProtectedRoute>
+              <Suspense fallback={<LasyLoad />}>
+                <ProtectedRoute
+                  isAuthenticated={isAuthenticated}
+                  isAdmin={user.role === "admin" ? true : false}
+                  adminRoute={true}
+                >
+                  <MainLayout>
+                    <Dashboard />
+                  </MainLayout>
+                </ProtectedRoute>
+              </Suspense>
             }
           />
         )}

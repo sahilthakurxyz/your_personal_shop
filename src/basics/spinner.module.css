@@ -107,6 +107,50 @@
             transform: rotate(360deg);
         }
     }
+
+    .once-load-container{
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      box-sizing: border-box;
+      padding: 10px;
+      left: 0;
+      top: 0;
+      z-index: 800;
+      color: #fff;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .once-load-loader{
+      width: 7vmax;
+      height: 7vmax;
+      border-radius: 50%;
+      border-top: 5px solid #fff;
+      border-left: 5px solid #fff;
+      border-right: 5px solid #fff;
+      border-bottom: 5px solid gray;
+      animation: rotator 1s linear infinite;
+      transition: all 0.5ms;
+    }
+    .once-load-box{
+      width: 80%;
+      display: flex;
+      margin-top: 3vmax;
+      flex-direction: column;
+    }
+    .once-load-container p{
+      
+     font: 500 1.2vmax "Rubik";
+    }
+  @keyframes rotator {
+   
+    100%{
+      transform: rotate(360deg);
+    }
+  }
     @media screen and (max-width:600px) {
       .small-button-loader{
         
