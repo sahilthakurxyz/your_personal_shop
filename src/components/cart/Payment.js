@@ -78,6 +78,7 @@ const Payment = () => {
       } else {
         if (result.paymentIntent.status === "succeeded") {
           alert.success(`Payment ${result.paymentIntent.status}`);
+          localStorage.removeItem("cartItems");
           order.paymentInfo = {
             id: result.paymentIntent.id,
             status: result.paymentIntent.status,

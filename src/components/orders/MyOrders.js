@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { LoginLoader } from "../../basics/Spinner";
 import ScreenVisual from "../labels/ScreenVisual";
 import MetaData from "../labels/MetaData";
+import Header from "../layouts/Header";
 
 const MyOrders = () => {
   const greenColor = styles["greenColor"];
@@ -85,9 +86,10 @@ const MyOrders = () => {
       ) : (
         <Fragment>
           <div className={styles["myOrder-main"]}>
+            <Header />
             <ScreenVisual />
             <MetaData title={`${user.name}'s orders`} />
-            <Box sx={{ height: 500, width: "100%" }}>
+            <Box sx={{ height: 500, width: "100%", mt: 8 }}>
               <Typography sx={{ textAlign: "center", mt: 5, mb: 2 }}>
                 Manage Orders
               </Typography>

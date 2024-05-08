@@ -1,20 +1,13 @@
 .myOrder-main{
-    margin-top: 5rem;
     width:98%;
     box-sizing: border-box;
-    
-   padding: 5px 3px;
+
    display: flex;
    flex-direction: column;
 }
-.myOrders-page{
-    background-color: white;
-}
-.data-grid-main-container{
-background-color: gray;
-}
+
+
 .data-grid-main-container div{
-    color: #fff;
     font: 400 1vmax "Rubik";
 }
 .data-grid-main-container  a {

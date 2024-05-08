@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children, isAuthenticated, isAdmin, adminRoute }) => {
     return <Navigate to="/account" />;
   }
   if (isAuthenticated === false) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace />;
   }
   return children ? children : <Outlet />;
 };

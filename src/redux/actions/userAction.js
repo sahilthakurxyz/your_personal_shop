@@ -44,20 +44,21 @@ import {
   axiosInstance,
   removeToken,
 } from "../../constants";
+
 // login User
 export const login = (email, password) => async (dispatch) => {
   try {
     attachTokenToRequests();
     dispatch(loginRequest());
 
-    const response = await axiosInstance.post(`/api/ecommerce/v1/loginuser`, {
+    const { data } = await axiosInstance.post(`/api/ecommerce/v1/loginuser`, {
       email,
       password,
     });
-    const token = response.data?.token;
+    const token = data?.token;
     localStorage.setItem("token", token);
-    localStorage.setItem("auth", response.data?.auth);
-    dispatch(loginSuccess(response.data?.user));
+    localStorage.setItem("auth", data?.auth);
+    dispatch(loginSuccess(data?.user));
   } catch (error) {
     // Dispatch the fail action with the error message
     dispatch(loginFail(error.response?.data.message));

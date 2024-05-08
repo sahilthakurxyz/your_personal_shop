@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./components/Authentication/Register";
@@ -6,9 +6,7 @@ import Login from "./components/Authentication/Login";
 import LasyLoad from "./basics/LasyLoad.js";
 import { loadUser } from "./redux/actions/userAction";
 import { useDispatch, useSelector } from "react-redux";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { axiosInstance } from "./constants.js";
+
 import NotFound from "./components/layouts/NotFound.js";
 const About = React.lazy(() => import("./components/layouts/About.js"));
 const Contact = React.lazy(() => import("./components/layouts/Contact.js"));
@@ -40,7 +38,9 @@ const OrderConfirm = React.lazy(() =>
   import("./components/cart/OrderConfirm.js")
 );
 
-const Payment = React.lazy(() => import("./components/cart/Payment.js"));
+const PaymentRoute = React.lazy(() =>
+  import("./components/cart/PaymentRoute.js")
+);
 const PaymentFailed = React.lazy(() =>
   import("./components/cart/PaymentFailed.js")
 );
@@ -53,26 +53,12 @@ const ResetPassword = React.lazy(() =>
 );
 
 function App() {
-  const [stripeApiKey, setStripeApiKey] = useState("");
-  const { user, isAuthenticated } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const getStripeApiKey = async () => {
-    try {
-      const { data } = await axiosInstance.get(
-        `/api/ecommerce/v1/stripeApiKey`
-      );
-      setStripeApiKey(data?.stripeKey);
-    } catch (error) {
-      if (error.response && error.response.status === 401) {
-        console.log(error.response);
-      } else {
-        console.log(`Error Fetching Stripe API Key ${error}`);
-      }
-    }
-  };
+  const auth = localStorage.getItem("auth");
+
   useEffect(() => {
     dispatch(loadUser());
-    getStripeApiKey();
   }, [dispatch]);
   return (
     <BrowserRouter>
@@ -131,7 +117,7 @@ function App() {
           path="/account"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={auth}>
                 <MainLayout>
                   <Account />
                 </MainLayout>
@@ -143,7 +129,7 @@ function App() {
           path="/update/profile"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={auth}>
                 <ProfileUpdate />
               </ProtectedRoute>
             </Suspense>
@@ -153,7 +139,7 @@ function App() {
           path="/update/password"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={auth}>
                 <PasswordUpdate />
               </ProtectedRoute>
             </Suspense>
@@ -163,10 +149,8 @@ function App() {
           path="/orders"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <MainLayout>
-                  <MyOrders />
-                </MainLayout>
+              <ProtectedRoute isAuthenticated={auth}>
+                <MyOrders />
               </ProtectedRoute>
             </Suspense>
           }
@@ -175,7 +159,7 @@ function App() {
           path="/orders/:id"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={auth}>
                 <MainLayout>
                   <OrdersDetail />
                 </MainLayout>
@@ -187,7 +171,7 @@ function App() {
           path="/shipping"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={auth}>
                 <Menu />
                 <Shipping />
               </ProtectedRoute>
@@ -198,7 +182,7 @@ function App() {
           path="/order/confirm"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={auth}>
                 <Menu />
                 <OrderConfirm />
               </ProtectedRoute>
@@ -209,12 +193,8 @@ function App() {
           path="/process/payment"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
-                {stripeApiKey && (
-                  <Elements stripe={loadStripe(stripeApiKey)}>
-                    <Payment />
-                  </Elements>
-                )}
+              <ProtectedRoute isAuthenticated={auth}>
+                <PaymentRoute />
               </ProtectedRoute>
             </Suspense>
           }
@@ -223,7 +203,7 @@ function App() {
           path="/payment/failed"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={auth}>
                 <MainLayout>
                   <PaymentFailed />
                 </MainLayout>
@@ -235,7 +215,7 @@ function App() {
           path="/success"
           element={
             <Suspense fallback={<LasyLoad />}>
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={auth}>
                 <MainLayout>
                   <Success />
                 </MainLayout>
@@ -268,7 +248,7 @@ function App() {
             element={
               <Suspense fallback={<LasyLoad />}>
                 <ProtectedRoute
-                  isAuthenticated={isAuthenticated}
+                  isAuthenticated={auth}
                   isAdmin={user.role === "admin" ? true : false}
                   adminRoute={true}
                 >

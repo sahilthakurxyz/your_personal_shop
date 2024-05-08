@@ -33,13 +33,13 @@ const Contact = () => {
         </div>
         <div className={styles["whatsapp"]}>
           <WhatsAppIcon />
-          <a href="">
+          <a href="https://github.com/sahilthakurxyz">
             <p>6006642472</p>
           </a>
         </div>
         <div className={styles["telegram"]}>
           <TelegramIcon />
-          <a href="">
+          <a href="https://github.com/sahilthakurxyz">
             <p>Telegram</p>
           </a>
         </div>

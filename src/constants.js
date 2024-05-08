@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { jwtDecode } from "jwt-decode"; // Correct import statement
 import axios from "axios";
 
@@ -15,8 +14,17 @@ export const axiosInstance = axios.create({
 // Function to attach token to requests using an interceptor (preferred)
 export const attachTokenToRequests = () => {
   const token = localStorage.getItem("token");
-  if (token) {
-    axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  if (!token) {
+    return;
+  }
+  if (!isTokenExpired(token)) {
+    if (token) {
+      axiosInstance.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${token}`;
+    }
+  } else {
+    removeToken();
   }
 };
 
@@ -32,54 +40,17 @@ axiosInstance.interceptors.request.use(
 // Custom Hook (optional) for easier integration into components
 
 // Function to check token expiry
-export const isTokenExpired = () => {
-  const token = localStorage.getItem("token");
+export const isTokenExpired = (token) => {
   if (!token) return true; // No token available
   const decodedToken = jwtDecode(token);
   const currentTime = Date.now() / 1000; // Convert milliseconds to seconds
+  // const timeLeftInSeconds = decodedToken.exp - currentTime;
+  // const timeLeftInDays = Math.ceil(timeLeftInSeconds / (60 * 60 * 24));
   return decodedToken.exp < currentTime; // Check if token expiry time is less than current time
 };
 
-// Function to refresh token
-export const refreshToken = async () => {
-  try {
-    const response = await axiosInstance.get("/api/ecommerce/v1/refreshToken");
-    const newToken = response.data.token;
-    localStorage.setItem("token", newToken);
-    return newToken;
-  } catch (error) {
-    console.error("Error refreshing token:", error);
-    throw error;
-  }
-};
-
-// Function to handle token expiry and refresh
-export const handleTokenRefresh = async () => {
-  if (isTokenExpired()) {
-    try {
-      const newToken = await refreshToken();
-      axiosInstance.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${newToken}`;
-    } catch (error) {
-      console.error("Token refresh failed:", error);
-      // Handle token refresh failure, e.g., redirect to login page
-    }
-  }
-};
-
-export const useTokenInterceptor = () => {
-  useEffect(() => {
-    attachTokenToRequests();
-  }, []);
-};
-// Call handleTokenRefresh when the application loads or whenever a protected route is accessed
-export const useTokenRefresh = () => {
-  useEffect(() => {
-    handleTokenRefresh();
-  }, []);
-};
 export const removeToken = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("auth");
+  localStorage.removeItem("expirationTime");
 };
