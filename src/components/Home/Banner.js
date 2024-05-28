@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import styles from "./banner.module.css";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
 import { getImages } from "../../redux/actions/imagesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
-import { getImageClearError } from "../../redux/reducers/imagesReducer";
-
 const Banner = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -16,6 +14,7 @@ const Banner = () => {
     [backImages]
   );
   const [currImageIndex, setCurrImageIndex] = useState(0);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrImageIndex((prevIndex) =>
@@ -25,23 +24,26 @@ const Banner = () => {
 
     return () => clearInterval(intervalId);
   }, [images]);
+
   useEffect(() => {
     if (error) {
-      alert.error(getImageClearError());
+      alert.error(error); // Display error message directly
     }
     dispatch(getImages());
   }, [dispatch, alert, error]);
-  const handleNextImage = () => {
+
+  const handleNextImage = useCallback(() => {
     setCurrImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [images]);
 
-  const handlePrevImage = () => {
+  const handlePrevImage = useCallback(() => {
     setCurrImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
-  };
+  }, [images]);
+
   return (
     <div className={styles["homeHeader"]}>
       {backImages && images.length > 0 && (

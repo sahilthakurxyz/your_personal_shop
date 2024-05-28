@@ -108,7 +108,7 @@
         }
     }
 
-    .once-load-container{
+    .once-load-container {
       height: 100vh;
       width: 100vw;
       position: fixed;
@@ -118,39 +118,39 @@
       top: 0;
       z-index: 800;
       color: #fff;
-      background-color: black;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
-    .once-load-loader{
-      width: 7vmax;
-      height: 7vmax;
+    
+    .once-load-spinner {
+      width: 4rem; /* Adjust size as needed */
+      height: 4rem; /* Adjust size as needed */
       border-radius: 50%;
-      border-top: 5px solid #fff;
-      border-left: 5px solid #fff;
-      border-right: 5px solid #fff;
-      border-bottom: 5px solid gray;
-      animation: rotator 1s linear infinite;
-      transition: all 0.5ms;
+      border: 0.5rem solid transparent;
+      border-top-color: #fff;
+      animation: spinner-animation 1s linear infinite;
     }
-    .once-load-box{
+    
+    @keyframes spinner-animation {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .once-load-box {
       width: 80%;
       display: flex;
-      margin-top: 3vmax;
+      margin-top: 2rem;
       flex-direction: column;
     }
-    .once-load-container p{
-      
-     font: 500 1.2vmax "Rubik";
+    
+    .once-load-container p {
+      font: 500 1.2rem "Rubik";
+      text-align: center;
     }
-  @keyframes rotator {
-   
-    100%{
-      transform: rotate(360deg);
-    }
-  }
     @media screen and (max-width:600px) {
       .small-button-loader{
         

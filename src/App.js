@@ -1,17 +1,16 @@
 import React, { Suspense, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { loadUser } from "./redux/actions/userAction";
+import { useDispatch, useSelector } from "react-redux";
 import Register from "./components/Authentication/Register";
 import Login from "./components/Authentication/Login";
 import LasyLoad from "./basics/LasyLoad.js";
-import { loadUser } from "./redux/actions/userAction";
-import { useDispatch, useSelector } from "react-redux";
-
+import MainLayout from "./MainLayout";
+import Home from "./components/Home/Home";
 import NotFound from "./components/layouts/NotFound.js";
 const About = React.lazy(() => import("./components/layouts/About.js"));
 const Contact = React.lazy(() => import("./components/layouts/Contact.js"));
-const Home = React.lazy(() => import("./components/Home/Home"));
-const MainLayout = React.lazy(() => import("./MainLayout"));
 const ProductDetail = React.lazy(() =>
   import("./components/ProductsDetail/ProductDetail")
 );
@@ -66,11 +65,9 @@ function App() {
         <Route
           path="/"
           element={
-            <Suspense fallback={<LasyLoad />}>
-              <MainLayout>
-                <Home />
-              </MainLayout>
-            </Suspense>
+            <MainLayout>
+              <Home />
+            </MainLayout>
           }
         />
         <Route
@@ -263,7 +260,7 @@ function App() {
         <Route
           path="/contact"
           element={
-            <Suspense>
+            <Suspense fallback={<LasyLoad />}>
               <Contact />
             </Suspense>
           }
@@ -271,7 +268,7 @@ function App() {
         <Route
           path="/about"
           element={
-            <Suspense>
+            <Suspense fallback={<LasyLoad />}>
               <About />
             </Suspense>
           }
@@ -279,7 +276,7 @@ function App() {
         <Route
           path="*"
           element={
-            <Suspense>
+            <Suspense fallback={<LasyLoad />}>
               <NotFound />
             </Suspense>
           }

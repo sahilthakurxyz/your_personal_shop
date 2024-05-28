@@ -1,8 +1,14 @@
-import React, { Fragment, useEffect, useMemo, useState } from "react";
+import React, {
+  Fragment,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 import styles from "./home.module.css";
 import Product1 from "./Product1.js";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions/productAction.js";
 import { useAlert } from "react-alert";
 import MetaData from "../labels/MetaData.js";
@@ -12,64 +18,67 @@ import Product2 from "./Product2.js";
 import HomeProducts from "./HomeProducts.js";
 import { allProductClearError } from "../../redux/reducers/productReducer.js";
 import OnceLoad from "../../basics/OnceLoad.js";
+import { debounce } from "lodash";
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
-
-  const [filterProductCategory, setFilterProductCategory] = useState([]);
   const [width, setWidth] = useState(window.innerWidth);
-  const { loading, products, error } = useSelector((state) => state.products);
-  const discountProductsArray = useMemo(
-    () =>
-      products
-        ? products.filter((product) => product.discount >= 15).slice(0, 4)
-        : [],
-    [products]
+
+  const { loading, products, error } = useSelector(
+    (state) => state.products,
+    shallowEqual
   );
-  const highRatingProductsArray = useMemo(
-    () => (products ? products.filter((product) => product.ratings > 3) : []),
-    [products]
-  );
-  const filterLaptopProductsArray = useMemo(
-    () =>
-      products
-        ? products.filter((product) => product.category === "Laptop")
-        : [],
-    [products]
-  );
+
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(allProductClearError());
     }
-  }, [dispatch, error, alert]);
-  useEffect(() => {
-    if (!products) return; // Early exit if no products
+  }, [error, alert, dispatch]);
 
-    setFilterProductCategory({
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
+
+  const filteredProducts = useMemo(() => {
+    if (!products) return {};
+
+    const discountProductsArray = products
+      .filter((product) => product.discount >= 15)
+      .slice(0, 4);
+    const highRatingProductsArray = products
+      .filter((product) => product.ratings > 3)
+      .slice(0, 4);
+    const filterLaptopProductsArray = products
+      .filter((product) => product.category === "Laptop")
+      .slice(0, 4);
+    const filterProductCategory = {
       Watches: products.filter((product) => product.category === "Watches"),
       Clothes: products.filter((product) => product.category === "Clothes"),
       Footwear: products.filter((product) => product.category === "Footwear"),
       Backpack: products.filter((product) => product.category === "Backpack"),
-    });
-  }, [products]);
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth); // Concise resize handler
-
-    window.addEventListener("resize", handleResize); // Add resize listener
-
-    return () => {
-      // Cleanup function
-      window.removeEventListener("resize", handleResize); // Remove listener on unmount
     };
-  }, []); // Empty dependency array: runs only once on mount
 
-  const calculateSize = () => (width <= 700 ? 14 : 13); // Improved size calculation
+    return {
+      discountProductsArray,
+      highRatingProductsArray,
+      filterLaptopProductsArray,
+      filterProductCategory,
+    };
+  }, [products]);
+
+  useEffect(() => {
+    const handleResize = debounce(() => setWidth(window.innerWidth), 300);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const calculateSize = useCallback(() => (width <= 700 ? 14 : 13), [width]);
+
   const options = {
-    size: calculateSize(), // Dynamic size based on width
+    size: calculateSize(),
     width: 120,
     display: "flex",
     alignItems: "center",
@@ -93,11 +102,13 @@ const Home = () => {
                 <div className={styles["heading"]}>
                   <p>Save Up to 50%</p>
                 </div>
-                {discountProductsArray && discountProductsArray.length >= 4 ? (
+                {filteredProducts.discountProductsArray.length >= 4 ? (
                   <div className={styles["products"]}>
-                    {discountProductsArray.slice(0, 4).map((product, index) => (
-                      <Product1 key={index} product={product} />
-                    ))}
+                    {filteredProducts.discountProductsArray.map(
+                      (product, index) => (
+                        <Product1 key={index} product={product} />
+                      )
+                    )}
                   </div>
                 ) : (
                   <div className={styles["no-products"]}>
@@ -110,10 +121,9 @@ const Home = () => {
                   <p>Top Rated</p>
                   <RatingStar {...options} />
                 </div>
-                {highRatingProductsArray &&
-                highRatingProductsArray.length >= 4 ? (
+                {filteredProducts.highRatingProductsArray.length >= 4 ? (
                   <div className={styles["products"]}>
-                    {highRatingProductsArray
+                    {filteredProducts.highRatingProductsArray
                       .slice(0, 4)
                       .map((product, index) => (
                         <Product2 key={index} product={product} />
@@ -129,10 +139,10 @@ const Home = () => {
                 <div className={styles["heading"]}>
                   <p>Up To 20% to 50% off | For Men </p>
                 </div>
-                {filterProductCategory &&
-                Object.keys(filterProductCategory).length >= 4 ? (
+                {Object.keys(filteredProducts.filterProductCategory).length >=
+                4 ? (
                   <div className={styles["products"]}>
-                    {Object.values(filterProductCategory)
+                    {Object.values(filteredProducts.filterProductCategory)
                       .flat()
                       .slice(0, 4)
                       .map((product, index) => (
@@ -149,14 +159,13 @@ const Home = () => {
                 <div className={styles["heading"]}>
                   <p>Save Up to 50%</p>
                 </div>
-                {filterLaptopProductsArray &&
-                filterLaptopProductsArray.length >= 4 ? (
+                {filteredProducts.filterLaptopProductsArray.length >= 4 ? (
                   <div className={styles["products"]}>
-                    {filterLaptopProductsArray
-                      .slice(0, 4)
-                      .map((product, index) => (
+                    {filteredProducts.filterLaptopProductsArray.map(
+                      (product, index) => (
                         <Product1 product={product} key={index} />
-                      ))}
+                      )
+                    )}
                   </div>
                 ) : (
                   <div className={styles["no-products"]}>
